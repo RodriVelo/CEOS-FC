@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-// Descomenta la importación cuando tengas la imagen lista
- import escudo from "../../assets/img/header/ESCUDO.png";
+import { useNavigate } from "react-router-dom";
+import escudo from "../../assets/img/header/ESCUDO.png";
 
 export default function Header() {
+
+  const navigate = useNavigate();
+
+  const navega = (direccion) => {
+    navigate(direccion);
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -10,62 +17,58 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
-          {/* Logo y Nombre alineados */}
           <div className="flex items-center gap-3 flex-shrink-0">
-            {/* Contenedor de la imagen del logo */}
             <div className="w-10 h-10 overflow-hidden rounded-full bg-gray-800 flex items-center justify-center">
-               <img
-                src={escudo} // Reemplazar por {escudo}
-                alt="Logo"
-                className="w-full h-full object-cover"
-              />
+              <img src={escudo} alt="Logo" className="w-full h-full object-cover"/>
             </div>
-            <span className="text-xl font-bold tracking-tighter text-white cursor-pointer uppercase">
-              A.C.D.S CEOS<span className="text-red-600">.</span>
+            <span 
+              onClick={() => navega("/")}
+              className="text-xl font-bold tracking-tighter text-white cursor-pointer uppercase"
+            >
+              A.C.D.S CEOS.
             </span>
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop */}
           <div className="hidden md:flex space-x-8 items-center">
-            <a href="#" className="text-sm font-medium text-white/80 hover:text-white transition-colors">Inicio</a>
-            <a href="#" className="text-sm font-medium text-white/80 hover:text-white transition-colors">Deportes</a>
-            <a href="#" className="text-sm font-medium text-white/80 hover:text-white transition-colors">El Club</a>
-            <button className="bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-red-700 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-red-600/20">
+            <button onClick={() => navega("/")} className="text-sm text-white/80 hover:text-white">
+              Inicio
+            </button>
+
+            <button onClick={() => navega("/deportes")} className="text-sm text-white/80 hover:text-white">
+              Deportes
+            </button>
+
+            <button className="text-sm text-white/80 hover:text-white">
+              El Club
+            </button>
+
+            <button className="bg-red-600 px-6 py-2 rounded-full text-sm font-bold">
               CONSULTAS
             </button>
           </div>
 
-          {/* Mobile Button (Icono de hamburguesa blanco) */}
-          <div className="md:hidden flex items-center">
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-red-500 focus:outline-none"
-            >
-              <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+          {/* Mobile button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+              ☰
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu con fondo oscuro */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-black/90 backdrop-blur-xl`}>
-        <div className="px-4 pt-2 pb-6 space-y-2">
-          <a href="#" className="block px-3 py-3 text-base font-medium text-white border-b border-white/5">Inicio</a>
-          <a href="#" className="block px-3 py-3 text-base font-medium text-white border-b border-white/5">Deportes</a>
-          <a href="#" className="block px-3 py-3 text-base font-medium text-white border-b border-white/5">El Club</a>
-          <div className="pt-4">
-            <button className="w-full bg-red-600 text-white py-3 rounded-xl font-bold">
-              CONSULTAS
-            </button>
-          </div>
+      {/* Mobile */}
+      {isOpen && (
+        <div className="md:hidden bg-black/90">
+          <button onClick={() => navega("/")} className="block w-full text-left px-4 py-3 text-white">
+            Inicio
+          </button>
+
+          <button onClick={() => navega("/deportes")} className="block w-full text-left px-4 py-3 text-white">
+            Deportes
+          </button>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
