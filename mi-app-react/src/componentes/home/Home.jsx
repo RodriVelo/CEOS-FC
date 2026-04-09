@@ -8,14 +8,14 @@ export default function Home() {
     // El degradado va de arriba (from-[#c80000]) hacia abajo (to-[#8b0000]).
     <main className=" min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-[BLACK] text-white">
       {/* Contenedor centrado */}
-      <div className="max-w-7xl mx-auto px-6  md:py-32 flex flex-col items-center justify-center text-center">
-  
-        {/* Escudo (protagonista) */}
-        <div className="md:h-45 mb-3 overflow-hidden hover:scale-105 transition-transform">
+      <div className="max-w-7xl mx-auto px-6 md:py-32 flex flex-col items-center justify-center text-center">
+
+        {/* Escudo */}
+        <div className="w-32 h-32 md:w-48 md:h-48 mb-4 overflow-hidden hover:scale-105 transition-transform">
           <img
             src={escudo}
             alt="Escudo Club Ceos"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </div>
 
@@ -29,7 +29,7 @@ export default function Home() {
           Deporte, pasión y comunidad en un solo lugar.
         </p>
 
-        {/* CTA */}
+        {/* Botones */}
         <div className="flex flex-col sm:flex-row gap-4">
           <button className="bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-all shadow-md">
             Asociate
@@ -40,7 +40,7 @@ export default function Home() {
           </button>
         </div>
 
-</div>
+      </div>
     
      {/* --- SECCIÓN: DEPORTES ----------------------------------------------------- */}
 <section className="w-full bg-white py-12 border-y border-gray-200">
