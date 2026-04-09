@@ -8,39 +8,39 @@ export default function Home() {
     // El degradado va de arriba (from-[#c80000]) hacia abajo (to-[#8b0000]).
     <main className=" min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-[BLACK] text-white">
       {/* Contenedor centrado */}
-      <div className="max-w-7xl mx-auto px-6 md:py-32 flex flex-col items-center justify-center text-center">
+      <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 md:py-32 flex flex-col items-center justify-center text-center">
 
-        {/* Escudo */}
-        <div className="w-32 h-32 md:w-48 md:h-48 mb-4 overflow-hidden hover:scale-105 transition-transform">
-          <img
-            src={escudo}
-            alt="Escudo Club Ceos"
-            className="w-full h-full object-contain"
-          />
-        </div>
+  {/* Escudo */}
+  <div className="w-28 h-28 md:w-48 md:h-48 mb-4 overflow-hidden hover:scale-105 transition-transform">
+    <img
+      src={escudo}
+      alt="Escudo Club Ceos"
+      className="w-full h-full object-contain"
+    />
+  </div>
 
-        {/* Título */}
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-          BIENVENIDOS
-        </h1>
+  {/* Título */}
+  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
+    BIENVENIDOS
+  </h1>
 
-        {/* Subtítulo */}
-        <p className="max-w-2xl text-lg md:text-xl text-white/80 mb-10 font-light leading-relaxed">
-          Deporte, pasión y comunidad en un solo lugar.
-        </p>
+  {/* Subtítulo */}
+  <p className="max-w-2xl text-lg md:text-xl text-white/80 mb-10 font-light leading-relaxed">
+    Deporte, pasión y comunidad en un solo lugar.
+  </p>
 
-        {/* Botones */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-all shadow-md">
-            Asociate
-          </button>
+  {/* Botones */}
+  <div className="flex flex-col sm:flex-row gap-4">
+    <button className="bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-all shadow-md">
+      Asociate
+    </button>
 
-          <button className="bg-transparent border-2 border-white/40 text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-white/10 transition-all">
-            Ver deportes
-          </button>
-        </div>
+    <button className="bg-transparent border-2 border-white/40 text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-white/10 transition-all">
+      Ver deportes
+    </button>
+  </div>
 
-      </div>
+</div>
     
      {/* --- SECCIÓN: DEPORTES ----------------------------------------------------- */}
 <section className="w-full bg-white py-12 border-y border-gray-200">
