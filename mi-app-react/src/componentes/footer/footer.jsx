@@ -16,10 +16,10 @@ const Footer = () => {
             Más que un club, una familia. Fomentando el deporte, la cultura y la unión de nuestra comunidad desde siempre.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="p-2 bg-zinc-900 rounded-full hover:bg-blue-600 transition-colors">
+            <a href="https://www.instagram.com/ceos.oficial/" className="p-2 bg-zinc-900 rounded-full hover:bg-blue-600 transition-colors">
               <FaInstagram size={20} />
             </a>
-            <a href="#" className="p-2 bg-zinc-900 rounded-full hover:bg-blue-600 transition-colors">
+            <a href="https://www.facebook.com/CeosFCJuninDeLosAndes" className="p-2 bg-zinc-900 rounded-full hover:bg-blue-600 transition-colors">
               <FaFacebook size={20} />
             </a>
             <a href="#" className="p-2 bg-zinc-900 rounded-full hover:bg-blue-600 transition-colors">
