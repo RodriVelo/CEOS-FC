@@ -43,7 +43,7 @@ export default function Header() {
               El Club
             </button>
 
-            <button className="bg-red-600 px-6 py-2 rounded-full text-sm font-bold">
+            <button className="bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold">
               CONSULTAS
             </button>
           </div>
@@ -59,7 +59,7 @@ export default function Header() {
 
       {/* Mobile */}
       {isOpen && (
-        <div className="md:hidden bg-black/90">
+        <div className="md:hidden bg-black/60">
           <button onClick={() => navega("/")} className="block w-full text-left px-4 py-3 text-white">
             Inicio
           </button>

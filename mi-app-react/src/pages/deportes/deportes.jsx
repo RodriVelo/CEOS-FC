@@ -1,16 +1,27 @@
 import futbol from "../../assets/img/deportes/futbol.jpg";
 import hockey from "../../assets/img/deportes/hockey.jpg";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 export default function Deportes() {
+
+    const navigate = useNavigate();
+  
+    const navega = (direccion) => {
+      navigate(direccion);
+    };
+
   return (
     <section
       id="deportes"
-      className="bg-gradient-to-b from-[#c80000] to-[BLACK] text-white py-20 px-6 border-t border-zinc-800"
+      className="bg-gradient-to-b from-[#ffff] to-[#ffff] text-white py-20 px-6 border-t border-zinc-800"
     >
       <div className="max-w-7xl mx-auto text-center">
 
         {/* Título */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="text-4xl text-red-700 md:text-5xl font-bold mb-4">
           Nuestros Deportes
         </h2>
         <p className="text-zinc-400 mb-12">
@@ -62,7 +73,7 @@ export default function Deportes() {
                 Formación y desarrollo deportivo
               </p>
 
-              <button className="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
+              <button onClick={() => navega("/hockeyinfo")} className="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
                 Ver más
               </button>
             </div>
