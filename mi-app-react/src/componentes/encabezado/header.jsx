@@ -57,18 +57,44 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile */}
-      {isOpen && (
-        <div className="md:hidden bg-black/60">
-          <button onClick={() => navega("/")} className="block w-full text-left px-4 py-3 text-white">
-            Inicio
-          </button>
 
-          <button onClick={() => navega("/deportes")} className="block w-full text-left px-4 py-3 text-white">
-            Deportes
-          </button>
-        </div>
-      )}
+      
+        {/* Mobile */}
+        {isOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full 
+                          bg-black/80 backdrop-blur-lg 
+                          border-t border-white/10
+                          animate-in slide-in-from-top duration-300">
+
+            <nav className="flex flex-col py-2">
+
+              <button
+                onClick={() => navega("/")}
+                className="flex items-center justify-between
+                          px-6 py-4 text-white 
+                          hover:bg-white/10 
+                          transition-all duration-200"
+              >
+                Inicio
+                <span className="text-white/40">→</span>
+              </button>
+
+              <div className="h-px bg-white/10 mx-4" />
+
+              <button
+                onClick={() => navega("/deportes")}
+                className="flex items-center justify-between
+                          px-6 py-4 text-white 
+                          hover:bg-white/10 
+                          transition-all duration-200"
+              >
+                Deportes
+                <span className="text-white/40">→</span>
+              </button>
+
+            </nav>
+          </div>
+        )}
     </nav>
   );
 }
