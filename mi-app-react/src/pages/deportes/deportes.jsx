@@ -11,7 +11,7 @@ export default function Deportes() {
   };
 
   return (
-    <section id="deportes" className="bg-white  md:pt-24">
+    <section id="deportes" className="bg-white py-16 md:pt-24">
       <div className="mx-auto">
 
         {/* Título */}
