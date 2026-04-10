@@ -1,8 +1,14 @@
 import React from 'react';
 import escudo from "../../assets/img/home/CEOS.png";
+import Carrusel from '../carrusel/carrusel';
+import fotoFutbol from "../../assets/img/deportes/futbol.jpg";
+import fotoHockey from "../../assets/img/deportes/hockey.jpg";
 
 
 export default function Home() {
+
+
+
   return (
     // mt-16 compensa la altura del Header fijo (h-16).
     // El degradado va de arriba (from-[#c80000]) hacia abajo (to-[#8b0000]).
@@ -41,52 +47,85 @@ export default function Home() {
   </div>
 
 </div>
-    
-     {/* --- SECCIÓN: DEPORTES ----------------------------------------------------- */}
-<section className="w-full bg-white py-12 border-y border-gray-200">
-  <div className="max-w-7xl mx-auto px-6">
 
-    {/* Título */}
-    <h2 className="text-3xl font-bold tracking-tight text-black mb-10 text-center md:text-left">
-      Nuestros <span className="font-light text-black/70">Deportes</span>
-    </h2>
-
-    {/* Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-      {/* CARD: FÚTBOL */}
-      <div className="flex items-center gap-5 p-6 rounded-2xl border border-gray-200 bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-        
-        {/* Icono */}
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400 border border-red-200 text-3xl group-hover:scale-110 transition-transform">
-          ⚽
-        </div>
-
-        {/* Texto */}
-        <div>
-          <h3 className="text-lg font-semibold text-black">Fútbol</h3>
-          <p className="text-sm text-gray-600">Escuela, juveniles y primera.</p>
-        </div>
-      </div>
-
-      {/* CARD: HOCKEY */}
-      <div className="flex items-center gap-5 p-6 rounded-2xl border border-gray-200 bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-        
-        {/* Icono */}
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400 border border-red-200 text-3xl group-hover:scale-110 transition-transform">
-          🏑
-        </div>
-
-        {/* Texto */}
-        <div>
-          <h3 className="text-lg font-semibold text-black">Hockey</h3>
-          <p className="text-sm text-gray-600">Todas las categorías femeninas.</p>
-        </div>
-      </div>
-
+  <section>
+    <div>
+      <Carrusel></Carrusel>
     </div>
-  </div>
-</section>
+  </section>
+
+     {/* --- SECCIÓN: DEPORTES ----------------------------------------------------- */}
+  <section>
+    <div className="bg-white min-h-[500px] w-full flex flex-col md:flex-row items-center justify-center p-8 gap-12 font-['Inter']">
+      
+      {/* Título Vertical - "DEPORTES" */}
+      <div className="relative pl-10">
+        <h2 className="font-['Lato'] font-black text-7xl md:text-8xl tracking-tighter text-black uppercase leading-none select-none">
+          Deportes
+        </h2>
+      </div>
+
+      {/* Contenedor de Tarjetas */}
+      <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl">
+       <div className="w-full py-16 flex justify-center">
+      <div className="flex gap-8 flex-wrap justify-center">
+
+        {/* Card Futbol */}
+        <div className="group relative w-[300px] h-[420px] overflow-hidden 
+                        transform -skew-x-6 rounded-xl shadow-xl
+                        hover:scale-105 transition-all duration-500 cursor-pointer">
+
+          <img
+            src={fotoFutbol}
+            alt="Futbol"
+            className="w-full h-full object-cover 
+                       skew-x-6 scale-110 
+                       group-hover:scale-125 
+                       transition-all duration-700"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition" />
+
+          {/* Label */}
+          <div className="absolute bottom-6 left-6 skew-x-6">
+            <span className="bg-red-600 text-white px-6 py-2 font-bold tracking-wider shadow-lg">
+              FUTBOL
+            </span>
+          </div>
+        </div>
+
+        {/* Card Hockey */}
+        <div className="group relative w-[300px] h-[420px] overflow-hidden 
+                        transform -skew-x-6 rounded-xl shadow-xl
+                        hover:scale-105 transition-all duration-500 cursor-pointer">
+
+          <img
+            src={fotoHockey}
+            alt="Hockey"
+            className="w-full h-full object-cover 
+                       skew-x-6 scale-110 
+                       group-hover:scale-125 
+                       transition-all duration-700"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition" />
+
+          {/* Label */}
+          <div className="absolute bottom-6 left-6 skew-x-6">
+            <span className="bg-red-600 text-white px-6 py-2 font-bold tracking-wider shadow-lg">
+              HOCKEY
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+    
 </main>
   );
 }
