@@ -39,7 +39,7 @@ export default function Header() {
               Deportes
             </button>
 
-            <button className="text-sm text-white/80 hover:text-white">
+            <button onClick={() => navega("/infoClub")} className="text-sm text-white/80 hover:text-white">
               El Club
             </button>
 

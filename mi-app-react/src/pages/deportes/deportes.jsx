@@ -1,15 +1,10 @@
 import futbol from "../../assets/img/deportes/futbol.jpg";
 import hockey from "../../assets/img/deportes/hockey.jpg";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Users, MapPin, Trophy } from "lucide-react";
 
 export default function Deportes() {
-  const navigate = useNavigate();
-
-  const navega = (direccion) => {
-    navigate(direccion);
-  };
-
+  
   return (
     <section id="deportes" className="bg-white py-16 md:pt-24">
       <div className="mx-auto">
@@ -37,9 +32,9 @@ export default function Deportes() {
           </div>
 
           {/* TEXTO */}
-          <div className="w-full md:w-1/2 text-[#c80000] px-6 md:px-16 py-10 md:py-12 flex flex-col justify-center">
+          <div className="w-full md:w-1/2 text-[#ffc800] px-6 md:px-16 py-10 md:py-12 flex flex-col justify-center">
 
-            <div className="w-12 h-2 bg-[#c80000] mb-4 rounded"></div>
+            <div className="w-12 h-2 bg-[#ffc800] mb-4 rounded"></div>
 
             <h2 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4">
               HOCKEY SOBRE <br /> CÉSPED

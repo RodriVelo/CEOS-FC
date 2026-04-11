@@ -4,6 +4,7 @@ import Footer from './componentes/footer/footer';
 import Home from "./pages/home/home"
 import Deportes from './pages/deportes/deportes';
 import HockeyInfo from './pages/deportes/hockey';
+import InfoClub from './pages/infoClub/infoClub';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/deportes" element={<Deportes />} />
         <Route path="/hockeyinfo" element={<HockeyInfo />} />
+        <Route path="/infoClub" element={<InfoClub />} />
       </Routes>
      <Footer></Footer>
     </BrowserRouter>

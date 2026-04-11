@@ -3,11 +3,16 @@ import escudo from "../../assets/img/home/CEOS.png";
 import Carrusel from '../carrusel/carrusel';
 import fotoFutbol from "../../assets/img/deportes/futbol.jpg";
 import fotoHockey from "../../assets/img/deportes/hockey.jpg";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Home() {
 
+ const navigate = useNavigate();
 
+  const navega = (direccion) => {
+    navigate(direccion);
+  };
 
   return (
     // mt-16 compensa la altura del Header fijo (h-16).
@@ -27,7 +32,7 @@ export default function Home() {
 
   {/* Título */}
   <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-    BIENVENIDOS
+    CLUB CEOS
   </h1>
 
   {/* Subtítulo */}
@@ -38,10 +43,10 @@ export default function Home() {
   {/* Botones */}
   <div className="flex flex-col sm:flex-row gap-4">
     <button className="bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-all shadow-md">
-      Asociate
+     Informacion socios
     </button>
 
-    <button className="bg-transparent border-2 border-white/40 text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-white/10 transition-all">
+    <button onClick={()=>navega("/deportes")} className="bg-transparent border-2 border-white/40 text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-white/10 transition-all">
       Ver deportes
     </button>
   </div>
@@ -52,79 +57,68 @@ export default function Home() {
     <div>
       <Carrusel></Carrusel>
     </div>
-  </section>
-
-     {/* --- SECCIÓN: DEPORTES ----------------------------------------------------- */}
-  <section>
-    <div className="bg-white min-h-[500px] w-full flex flex-col md:flex-row items-center justify-center p-8 gap-12 font-['Inter']">
+    </section>
+{/* DEPORTES */}
+<section className="w-full bg-gray-100 py-16 md:py-20">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4">
+    
+    {/* LEFT IMAGES */}
+    <div className="relative flex justify-center lg:justify-start gap-4 md:gap-6">
       
-      {/* Título Vertical - "DEPORTES" */}
-      <div className="relative pl-10">
-        <h2 className="font-['Lato'] font-black text-7xl md:text-8xl tracking-tighter text-black uppercase leading-none select-none">
-          Deportes
-        </h2>
+      {/* Image column */}
+      <div className="flex flex-col gap-4 md:gap-6">
+        <img
+          src={fotoHockey}
+          alt=""
+          className="w-[150px] h-[220px] md:w-[220px] md:h-[320px] lg:w-[260px] lg:h-[360px] object-cover"
+        />
+
+        {/* Experience box */}
+        <div className="bg-gradient-to-r from-[#c80000] to-black text-white p-4 md:p-6">
+          <h3 className="text-2xl md:text-3xl font-bold">+200</h3>
+          <p className="text-xs md:text-sm">Jugadores/as en deportes</p>
+        </div>
       </div>
 
-      {/* Contenedor de Tarjetas */}
-      <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl">
-       <div className="w-full py-16 flex justify-center">
-      <div className="flex gap-8 flex-wrap justify-center">
-
-        {/* Card Futbol */}
-        <div className="group relative w-[300px] h-[420px] overflow-hidden 
-                        transform -skew-x-6 rounded-xl shadow-xl
-                        hover:scale-105 transition-all duration-500 cursor-pointer">
-
-          <img
-            src={fotoFutbol}
-            alt="Futbol"
-            className="w-full h-full object-cover 
-                       skew-x-6 scale-110 
-                       group-hover:scale-125 
-                       transition-all duration-700"
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition" />
-
-          {/* Label */}
-          <div className="absolute bottom-6 left-6 skew-x-6">
-            <span className="bg-red-600 text-white px-6 py-2 font-bold tracking-wider shadow-lg">
-              FUTBOL
-            </span>
-          </div>
-        </div>
-
-        {/* Card Hockey */}
-        <div className="group relative w-[300px] h-[420px] overflow-hidden 
-                        transform -skew-x-6 rounded-xl shadow-xl
-                        hover:scale-105 transition-all duration-500 cursor-pointer">
-
-          <img
-            src={fotoHockey}
-            alt="Hockey"
-            className="w-full h-full object-cover 
-                       skew-x-6 scale-110 
-                       group-hover:scale-125 
-                       transition-all duration-700"
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition" />
-
-          {/* Label */}
-          <div className="absolute bottom-6 left-6 skew-x-6">
-            <span className="bg-red-600 text-white px-6 py-2 font-bold tracking-wider shadow-lg">
-              HOCKEY
-            </span>
-          </div>
-        </div>
-
+      {/* Image 2 */}
+      <div className="mt-10 md:mt-16 lg:mt-20">
+        <img
+          src={fotoFutbol}
+          alt=""
+          className="w-[150px] h-[220px] md:w-[220px] md:h-[320px] lg:w-[260px] lg:h-[360px] object-cover"
+        />
       </div>
     </div>
-      </div>
+
+    {/* RIGHT CONTENT */}
+    <div className="text-center lg:text-left">
+      <p className="text-[#c80000] font-medium mb-3">
+        — SOBRE DISCIPLINAS
+      </p>
+
+      <h2 className="font-['Lato'] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter text-black uppercase leading-none select-none mb-4">
+        Deportes
+      </h2>
+
+      <p className="text-gray-500 mb-4 text-sm md:text-base">
+        Descubrí nuestras disciplinas deportivas pensadas para todas las edades y
+        niveles. Fútbol y hockey son espacios donde se fomenta el trabajo en equipo,
+        la diversión y el desarrollo de habilidades dentro y fuera de la cancha.
+      </p>
+
+      <p className="text-gray-500 mb-8 text-sm md:text-base">
+        Sumate a los entrenamientos, participá en competencias y formá parte de una
+        comunidad apasionada por el deporte. Conocé horarios, categorías y toda la
+        información para empezar.
+      </p>
+
+      <button onClick={()=>navega("/deportes")} className="bg-gradient-to-r from-[#c80000] to-black text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition">
+        Ver más deportes
+      </button>
     </div>
-  </section>
+
+  </div>
+</section>
     
 </main>
   );
