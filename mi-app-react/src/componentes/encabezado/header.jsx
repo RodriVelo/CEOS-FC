@@ -92,6 +92,17 @@ export default function Header() {
                 <span className="text-white/40">→</span>
               </button>
 
+              <button
+                onClick={() => navega("/infoClub")}
+                className="flex items-center justify-between
+                          px-6 py-4 text-white 
+                          hover:bg-white/10 
+                          transition-all duration-200"
+              >
+                El Club
+                <span className="text-white/40">→</span>
+              </button>
+
             </nav>
           </div>
         )}
