@@ -36,12 +36,7 @@ const Footer = () => {
             <FaFacebook size={18} />
           </a>
 
-          <a
-            href="#"
-            className="p-2 bg-zinc-900 rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110"
-          >
-            <FaTwitter size={18} />
-          </a>
+          
         </div>
       </div>
 

@@ -42,7 +42,7 @@ export default function Home() {
 
   {/* Botones */}
   <div className="flex flex-col sm:flex-row gap-4">
-    <button className="bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-all shadow-md">
+    <button onClick={()=>navega("/informacionSocios")} className="bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-all shadow-md">
      Informacion socios
     </button>
 
