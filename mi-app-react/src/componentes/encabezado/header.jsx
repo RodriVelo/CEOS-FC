@@ -85,7 +85,8 @@ export default function Header() {
                                hover:bg-red-500
                                hover:scale-105
                                hover:shadow-lg
-                               hover:shadow-red-500/30">
+                               hover:shadow-red-500/30" onClick={() => navega("/informacionSocios")}>
+                                
               CONSULTAS
             </button>
 
@@ -169,6 +170,7 @@ export default function Header() {
                          transition-all duration-300
                          hover:scale-[1.02]
                          shadow-lg shadow-red-500/20"
+                         onClick={() => navega("/informacionSocios")}
             >
               CONSULTAS
             </button>

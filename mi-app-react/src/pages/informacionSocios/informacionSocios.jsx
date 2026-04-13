@@ -83,6 +83,7 @@ export default function InformacionSocios() {
 
         {/* INFO DINAMICA */}
         {activo && (
+       
           <div ref={infoRef} className="mt-16 bg-gray-50 rounded-3xl p-8 md:p-12">
 
             {/* BENEFICIOS */}
@@ -122,9 +123,9 @@ export default function InformacionSocios() {
                   <li>• Abonar primera cuota</li>
                 </ul>
 
-                <button className="mt-8 bg-[#c80000] hover:bg-black text-white px-6 py-3 rounded-xl transition">
+                {/* <button className="mt-8 bg-[#c80000] hover:bg-black text-white px-6 py-3 rounded-xl transition">
                   Asociarme
-                </button>
+                </button> */}
               </div>
             )}
 
@@ -146,9 +147,9 @@ export default function InformacionSocios() {
                   <li>• Débito automático</li>
                 </ul>
 
-                <button className="mt-8 bg-[#ffc800] hover:bg-[#c80000] hover:text-white text-black px-6 py-3 rounded-xl transition font-semibold">
+                {/* <button className="mt-8 bg-[#ffc800] hover:bg-[#c80000] hover:text-white text-black px-6 py-3 rounded-xl transition font-semibold">
                   Pagar cuota
-                </button>
+                </button> */}
               </div>
             )}
 
