@@ -1,158 +1,162 @@
+import { useState, useRef } from "react";
 import futbol from "../../assets/img/deportes/futbol.jpg";
 import hockey from "../../assets/img/deportes/hockey.jpg";
-// import { useNavigate } from "react-router-dom";
-import { Users, MapPin, Trophy } from "lucide-react";
+import { Users, MapPin, Trophy, Goal } from "lucide-react";
 
 export default function Deportes() {
-  
-  return (
-    <section id="deportes" className="bg-white py-16 md:pt-24">
-      <div className="mx-auto">
+  const [activo, setActivo] = useState(null);
+  const infoRef = useRef(null);
 
-        {/* Título */}
+  const handleClick = (deporte) => {
+    setActivo(deporte);
+
+    setTimeout(() => {
+      infoRef.current?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
+  return (
+    <section id="deportes" className="bg-white">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white py-16 md:pt-24">
+
+        {/* TITULO */}
         <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-red-700 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Nuestros Deportes
           </h2>
-          <p className="text-zinc-500">
-            Entrená, competí y formá parte del equipo
-          </p>
+          <p>Entrená, competí y formá parte del equipo</p>
         </div>
 
-        {/* ================= HOCKEY ================= */}
-        <div className="w-full flex flex-col md:flex-row">
+        {/* CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 max-w-5xl mx-auto">
 
-          {/* IMAGEN */}
-          <div className="w-full md:w-1/2 h-64 md:h-auto">
-            <img
-              src={hockey}
-              alt="Hockey"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* TEXTO */}
-          <div className="w-full md:w-1/2 text-[#ffc800] px-6 md:px-16 py-10 md:py-12 flex flex-col justify-center">
-
-            <div className="w-12 h-2 bg-[#ffc800] mb-4 rounded"></div>
-
-            <h2 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4">
-              HOCKEY SOBRE <br /> CÉSPED
-            </h2>
-
-            <p className="text-sm md:text-base text-black mb-8 leading-relaxed">
-              Desarrollo deportivo desde categorías formativas hasta primera división, promoviendo el trabajo en equipo, la disciplina y la pasión por el hockey.
+          {/* HOCKEY */}
+          <div
+            onClick={() => handleClick("hockey")}
+            className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center 
+            hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer"
+          >
+            <Goal className="w-12 h-12 mb-3 text-[#ffc800]" />
+            <h2 className="text-xl font-semibold mb-2">Hockey</h2>
+            <p className="text-gray-500">
+              Información sobre hockey, equipos y torneos.
             </p>
-
-            <div className="space-y-5">
-
-              <div className="flex gap-4">
-                <Trophy className="text-red-600 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-zinc-800">Categorías</p>
-                  <p className="text-zinc-600">
-                    SUB 12 · SUB 14 · SUB 18 · Primera División
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <Users className="text-red-600 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-zinc-800">Cuerpo técnico</p>
-                  <p className="text-zinc-600">
-                    SUB 12 y SUB 14: Fernando Vallejos , Lucila Solorza
-                  </p>
-                  <p className="text-zinc-600">
-                    Sub 18 y Primera División: Fernando Aminahuel
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <MapPin className="text-red-600 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-zinc-800">Lugar de entrenamiento</p>
-                  <p className="text-zinc-600">
-                    Cancha Municipal de Hockey - Junin de los Andes
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-<div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent my-16"></div>
-        {/* ================= FUTBOL ================= */}
-        <div className="w-full flex flex-col md:flex-row-reverse">
-
-          {/* IMAGEN */}
-          <div className="w-full md:w-1/2 h-64 md:h-auto">
-            <img
-              src={futbol}
-              alt="Fútbol"
-              className="w-full h-full object-cover"
-            />
           </div>
 
-          {/* TEXTO */}
-          <div className="w-full md:w-1/2 text-[#c80000] px-6 md:px-16 py-10 md:py-12 flex flex-col justify-center">
-
-            <div className="w-12 h-2 bg-[#c80000] mb-4 rounded"></div>
-
-            <h2 className="text-2xl md:text-4xl font-extrabold leading-tight mb-4">
-              FÚTBOL
-            </h2>
-
-            <p className="text-sm md:text-base text-black mb-8 leading-relaxed">
-              Entrenamientos formativos y competitivos para todas las edades,
-              fomentando el trabajo en equipo, la disciplina y el desarrollo deportivo.
+          {/* FUTBOL */}
+          <div
+            onClick={() => handleClick("futbol")}
+            className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center 
+            hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer"
+          >
+            <Trophy className="w-12 h-12 mb-3 text-[#ffc800]" />
+            <h2 className="text-xl font-semibold mb-2">Fútbol</h2>
+            <p className="text-gray-500">
+              Información sobre fútbol, ligas y competencias.
             </p>
-
-            <div className="space-y-5">
-
-              <div className="flex gap-4">
-                <Trophy className="text-red-600 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-zinc-800">Categorías</p>
-                  <p className="text-zinc-600">
-                    9na Division · 8va Division · 5ta Division · Primera Division
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <Users className="text-red-600 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-zinc-800">Cuerpo técnico</p>
-                  <p className="text-zinc-600">
-                    8va Division y 9na Division: Leonel Guenchullan · Raul Paiz
-                  </p>
-                  <p className="text-zinc-600">
-                    5ta Division: Leonardo Kretman
-                  </p>
-                  <p className="text-zinc-600">
-                    Primera Division: Lihuen Sibon
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <MapPin className="text-red-600 mt-1 shrink-0" />
-                <div>
-                  <p className="font-semibold text-zinc-800">Lugar de entrenamiento</p>
-                  <p className="text-zinc-600">
-                    Estadio Municipal - Junín de los Andes
-                  </p>
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
 
-      </div>
+        {/* INFO */}
+        {activo && (
+          <div ref={infoRef} className="bg-white mt-16">
+
+            {/* HOCKEY */}
+            {activo === "hockey" && (
+              <div className="w-full flex flex-col md:flex-row">
+                <div className="w-full md:w-1/2 h-64 md:h-auto">
+                  <img src={hockey} className="w-full h-full object-cover" />
+                </div>
+
+                <div className="w-full md:w-1/2 px-6 md:px-16 py-12 text-black">
+                  <h2 className="text-3xl font-bold mb-4 text-[#ffc800]">
+                    HOCKEY SOBRE CÉSPED
+                  </h2>
+
+                  <p className="mb-8">
+                    Desarrollo deportivo desde categorías formativas hasta primera división.
+                  </p>
+
+                  <div className="space-y-5">
+                    <div className="flex gap-4">
+                      <Trophy className="text-red-600" />
+                      <div>
+                        <p className="font-semibold">Categorías</p>
+                        <p>SUB 12 · SUB 14 · SUB 18 · Primera</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <Users className="text-red-600" />
+                      <div>
+                        <p className="font-semibold">Cuerpo técnico</p>
+                        <p>Fernando Vallejos · Lucila Solorza</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <MapPin className="text-red-600" />
+                      <div>
+                        <p className="font-semibold">Lugar</p>
+                        <p>Cancha Municipal - Junín de los Andes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* FUTBOL */}
+            {activo === "futbol" && (
+              <div className="w-full flex flex-col md:flex-row-reverse">
+                <div className="w-full md:w-1/2 h-64 md:h-auto">
+                  <img src={futbol} className="w-full h-full object-cover" />
+                </div>
+
+                <div className="w-full md:w-1/2 px-6 md:px-16 py-12 text-black">
+                  <h2 className="text-3xl font-bold mb-4 text-[#c80000]">
+                    FÚTBOL
+                  </h2>
+
+                  <p className="mb-8">
+                    Entrenamientos formativos y competitivos para todas las edades.
+                  </p>
+
+                  <div className="space-y-5">
+                    <div className="flex gap-4">
+                      <Trophy className="text-red-600" />
+                      <div>
+                        <p className="font-semibold">Categorías</p>
+                        <p>9na · 8va · 5ta · Primera</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <Users className="text-red-600" />
+                      <div>
+                        <p className="font-semibold">Cuerpo técnico</p>
+                        <p>Leonel Guenchullan · Raul Paiz</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <MapPin className="text-red-600" />
+                      <div>
+                        <p className="font-semibold">Lugar</p>
+                        <p>Estadio Municipal - Junín de los Andes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+        )}
+
+      </main>
     </section>
   );
 }
