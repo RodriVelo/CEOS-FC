@@ -23,50 +23,69 @@ export default function Formulario() {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-xl mx-auto px-6 text-black">
-        <h2 className="text-2xl font-semibold mb-6">
-          Contacto
-        </h2>
+   <section className="bg-gradient-to-b from-white to-zinc-100">
+  <div className="max-w-xl mx-auto px-6">
+    
+    {/* Card */}
+    <div className="bg-white rounded-2xl shadow-lg p-8 border border-zinc-200">
+      
+      {/* Título */}
+      <h2 className="text-3xl font-bold mb-2 text-center">
+        Contacto
+      </h2>
+      <p className="text-zinc-500 text-center mb-8">
+        Dejanos tu mensaje y te respondemos a la brevedad
+      </p>
 
-        <form
-          ref={form}
-          onSubmit={sendEmail}
-          name="contact-form"
-          className="space-y-4"
-        >
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        name="contact-form"
+        className="space-y-5"
+      >
+        {/* Nombre */}
+        <div>
           <input
             type="text"
             name="name"
-            placeholder="Nombre"
+            placeholder="Nombre completo"
             required
-            className="w-full border rounded-lg p-3"
+            className="w-full border border-zinc-300 rounded-xl p-3 outline-none focus:ring-2 focus:ring-black focus:border-black transition"
           />
+        </div>
 
+        {/* Email */}
+        <div>
           <input
             type="email"
             name="email"
             placeholder="Email"
             required
-            className="w-full border rounded-lg p-3"
+            className="w-full border border-zinc-300 rounded-xl p-3 outline-none focus:ring-2 focus:ring-black focus:border-black transition"
           />
+        </div>
 
+        {/* Mensaje */}
+        <div>
           <textarea
             name="message"
-            placeholder="Mensaje"
+            placeholder="Escribí tu mensaje..."
             required
             rows="4"
-            className="w-full border rounded-lg p-3"
+            className="w-full border border-zinc-300 rounded-xl p-3 outline-none focus:ring-2 focus:ring-black focus:border-black transition resize-none"
           />
+        </div>
 
-          <button
-            type="submit"
-            className="w-full bg-black text-white py-3 rounded-lg"
-          >
-            Enviar consulta
-          </button>
-        </form>
-      </div>
-    </section>
+        {/* Botón */}
+        <button
+          type="submit"
+          className="w-full bg-black text-white py-3 rounded-xl font-medium hover:bg-zinc-800 transition duration-300"
+        >
+          Enviar consulta
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
   );
 }
