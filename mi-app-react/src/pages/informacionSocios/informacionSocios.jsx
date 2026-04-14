@@ -172,7 +172,7 @@ export default function InformacionSocios() {
       </div>
 
       <a
-        href="https://wa.me/5492991234567"
+        href="https://wa.me/5492972405717"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 hover:bg-green-600 text-white font-medium px-5 py-3 rounded-lg transition whitespace-nowrap"

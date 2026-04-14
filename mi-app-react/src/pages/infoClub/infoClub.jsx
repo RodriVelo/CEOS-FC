@@ -8,6 +8,8 @@ import {
 import fotoFutbol1 from "../../assets/img/infoClub/futbol1.jpg"
 import fotoHockey1 from "../../assets/img/infoClub/hockey1.jpg"
 
+import fotoPredio from "../../assets/img/infoClub/predio.jpg"
+
 const images = [fotoFutbol1, fotoHockey1];
 
 export default function InfoClub() {
@@ -185,7 +187,7 @@ export default function InfoClub() {
                 </section>
 
                 {/* Horarios */}
-                <section className="bg-gradient-to-b from-[#c80000] to-black rounded-3xl p-6 md:p-12 text-white shadow-xl">
+                {/* <section className="bg-gradient-to-b from-[#c80000] to-black rounded-3xl p-6 md:p-12 text-white shadow-xl">
                   
                   <div className="flex items-center gap-4 mb-8">
                     <Clock size={28} className="text-[#ffc800]" />
@@ -207,13 +209,65 @@ export default function InfoClub() {
                       <p>Primera: 20:00 hs</p>
                     </div>
                   </div>
-                </section>
+                </section> */}
 
               </div>
             </div>
 
           </div>
         </div>
+
+       <section className="w-full min-h-[600px] flex flex-col md:flex-row overflow-hidden">
+  
+  {/* Lado izquierdo: Información y Mapa */}
+  <div className="flex-1 bg-[#ffc800] flex items-center justify-center py-16 px-6 md:px-12">
+    <div className="max-w-xl w-full">
+      {/* Etiqueta decorativa */}
+      <span className="uppercase tracking-widest text-sm font-bold text-slate-900/60 mb-2 block">
+        Ubicación Central
+      </span>
+      
+      <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4 leading-tight">
+        Nuestro <br /> Predio
+      </h2>
+
+      <p className="text-lg text-slate-800/80 mb-8 max-w-md leading-relaxed">
+        Contamos con instalaciones diseñadas para potenciar cada entrenamiento. 
+        ¡Vení a conocernos!
+      </p>
+
+      {/* Contenedor del Mapa con efecto de elevación */}
+      <div className="relative group">
+        <div className="absolute -inset-1 bg-slate-900/10 rounded-2xl blur transition duration-300 group-hover:opacity-100"></div>
+        <div className="relative overflow-hidden rounded-xl shadow-2xl bg-white p-2">
+          <iframe
+            src="https://www.google.com/maps?q=-39.970552,-71.0791061&z=15&output=embed"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            className="rounded-lg"
+            loading="lazy"
+            title="Mapa del predio"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Lado derecho: Imagen Full-Bleed */}
+  <div className="flex-1 min-h-[400px] md:min-h-full relative">
+    <img
+      src={fotoPredio}
+      alt="Instalaciones del Predio"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+    {/* Overlay sutil para dar profundidad */}
+    <div className="absolute inset-0 bg-slate-900/5 md:bg-transparent"></div>
+  </div>
+
+</section>
+
+       
 
       </main>
     </section>
