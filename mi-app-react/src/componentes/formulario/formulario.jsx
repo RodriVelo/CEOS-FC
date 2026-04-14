@@ -11,7 +11,7 @@ export default function Formulario() {
       "service_bmwiygl",
       "template_3qt9o1j",
       form.current,
-      "mSLN•••••••••••••••••"
+      "5GiRQhIlFcQFoh4ac"
     )
     .then(() => {
       alert("Mensaje enviado");
