@@ -9,7 +9,7 @@ export default function Formulario() {
 
     emailjs.sendForm(
       "service_bmwiygl",
-      "template_3qt9o1j",
+      "template_3wku43k",
       form.current,
       "5GiRQhIlFcQFoh4ac"
     )
@@ -32,6 +32,7 @@ export default function Formulario() {
         <form
           ref={form}
           onSubmit={sendEmail}
+          name="contact-form"
           className="space-y-4"
         >
           <input
