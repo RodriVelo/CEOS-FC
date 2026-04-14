@@ -21,16 +21,13 @@ export default function InfoClub() {
   return (
     <section className="w-full bg-white text-slate-900 font-['Inter']">
       
-      <main className="w-full bg-gradient-to-b from-[#c80000] to-black text-white py-16 md:py-20">
+      <main className="w-full bg-gradient-to-b from-[#c80000] to-black text-white py-25 md:py-20">
         
         {/* CONTENEDOR GENERAL */}
-        <div className="max-w-7xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffc800] text-black text-xs font-bold tracking-widest uppercase mb-4 w-fit shadow-sm">
-            <Shield size={14} /> Institucional
-          </span>
 
           <h2 className="font-['Lato'] text-3xl sm:text-4xl md:text-6xl font-black leading-tight tracking-tight">
             ASOCIACIÓN CIVIL <br />
@@ -131,7 +128,7 @@ export default function InfoClub() {
 
                   <div className="space-y-4 text-slate-600 leading-relaxed md:text-lg">
                     <p>
-                      CEOS nació en <span className="text-[#c80000] font-bold">2019</span> 
+                      CEOS nació en <span className="text-[#c80000] font-bold">2019 </span> 
                       con una visión clara: convertirse en un referente del crecimiento 
                       deportivo y humano en la región.
                     </p>
@@ -224,7 +221,7 @@ export default function InfoClub() {
     <div className="max-w-xl w-full">
       {/* Etiqueta decorativa */}
       <span className="uppercase tracking-widest text-sm font-bold text-slate-900/60 mb-2 block">
-        Ubicación Central
+        Ubicación 
       </span>
       
       <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4 leading-tight">

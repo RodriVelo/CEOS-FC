@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import futbol from "../../assets/img/deportes/futbol.jpg";
 import hockey from "../../assets/img/deportes/hockey.jpg";
-import { Users, MapPin, Trophy, Goal } from "lucide-react";
+import { Users, MapPin, Trophy, Goal, Shield } from "lucide-react";
 
 export default function Deportes() {
   const [activo, setActivo] = useState(null);
@@ -19,9 +19,10 @@ export default function Deportes() {
 
   return (
     <section id="deportes" className="bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white py-16 md:pt-24">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white py-25 md:pt-24">
 
         {/* TITULO */}
+       
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Nuestros Deportes

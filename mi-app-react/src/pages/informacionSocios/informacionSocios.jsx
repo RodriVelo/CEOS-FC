@@ -179,7 +179,9 @@ export default function InformacionSocios() {
       >
         Consultar por WhatsApp
       </a>
-
+        <div>
+          <Formulario></Formulario>
+        </div>
     </div>
    
       </main>
