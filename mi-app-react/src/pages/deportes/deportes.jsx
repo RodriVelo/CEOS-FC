@@ -19,7 +19,7 @@ export default function Deportes() {
 
   return (
     <section id="deportes" className="bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white py-25 md:pt-24">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 md:pt-24">
 
         {/* TITULO */}
        
@@ -31,7 +31,7 @@ export default function Deportes() {
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 ´tmax-w-5xl mx-auto">
 
           {/* HOCKEY */}
           <div
@@ -60,104 +60,316 @@ export default function Deportes() {
           </div>
         </div>
 
-        {/* INFO */}
-        {activo && (
-          <div ref={infoRef} className="bg-white mt-16">
+</main>
+        {/* INFO HOCKEY*/}
+        {activo === "hockey" && (
+  <div className="w-full bg-gray-50 py-16">
+    <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
 
-            {/* HOCKEY */}
-            {activo === "hockey" && (
-              <div className="w-full flex flex-col md:flex-row">
-                <div className="w-full md:w-1/2 h-64 md:h-auto">
-                  <img src={hockey} className="w-full h-full object-cover" />
-                </div>
+      {/* IMAGEN */}
+      <div className="relative flex justify-center items-center">
+        <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
+          <img
+            src={hockey}
+            className="w-full h-full object-cover rounded-full"
+          />
+        </div>
+      </div>
 
-                <div className="w-full md:w-1/2 px-6 md:px-16 py-12 text-black">
-                  <h2 className="text-3xl font-bold mb-4 text-[#ffc800]">
-                    HOCKEY SOBRE CÉSPED
-                  </h2>
+      {/* TEXTO */}
+      <div className="max-w-xl text-center md:text-left">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+          HOCKEY DEL CLUB
+        </h2>
 
-                  <p className="mb-8">
-                    Desarrollo deportivo desde categorías formativas hasta primera división.
-                  </p>
+        <p className="text-gray-600 mb-8">
+          Formación deportiva desde edades tempranas hasta primera división,
+          fomentando el trabajo en equipo, la disciplina y la competencia.
+        </p>
 
-                  <div className="space-y-5">
-                    <div className="flex gap-4">
-                      <Trophy className="text-red-600" />
-                      <div>
-                        <p className="font-semibold">Categorías</p>
-                        <p>SUB 12 · SUB 14 · SUB 18 · Primera</p>
-                      </div>
-                    </div>
+        {/* FEATURES */}
+        <div className="flex flex-col sm:flex-row gap-6 mb-8 justify-center md:justify-start">
 
-                    <div className="flex gap-4">
-                      <Users className="text-red-600" />
-                      <div>
-                        <p className="font-semibold">Cuerpo técnico</p>
-                        <p>Fernando Vallejos · Lucila Solorza</p>
-                      </div>
-                    </div>
+          <div className="flex items-center gap-3">
+            <div className="bg-red-500 p-3 rounded-full text-white">
+              <Trophy size={18} />
+            </div>
+            <div className="text-left">
+              <p className="font-semibold text-sm">Categorías</p>
+              <p className="text-gray-500 text-sm">
+                SUB 12 · SUB 14 · SUB 18 · Primera
+              </p>
+            </div>
+          </div>
 
-                    <div className="flex gap-4">
-                      <MapPin className="text-red-600" />
-                      <div>
-                        <p className="font-semibold">Lugar</p>
-                        <p>Cancha Municipal - Junín de los Andes</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+          <div className="flex items-center gap-3">
+            <div className="bg-red-500 p-3 rounded-full text-white">
+              <Users size={18} />
+            </div>
+            <div className="text-left">
+              <p className="font-semibold text-sm">Cuerpo técnico</p>
+              <p className="text-gray-500 text-sm">
+                Vallejos · Solorza
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* UBICACIÓN */}
+        <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
+          <div className="bg-red-500 p-3 rounded-full text-white">
+            <MapPin size={18} />
+          </div>
+          <div>
+            <p className="font-semibold text-sm">Ubicación</p>
+            <p className="text-gray-500 text-sm">
+              Cancha Municipal - Junín de los Andes
+            </p>
+          </div>
+        </div>
+
+      
+      </div>
+    </div>
+    <div>
+    
+    <div className="flex justify-center my-10">
+  <div className="w-100 h-[2px] bg-gray-300 rounded-full"></div>
+</div>
+
+<div className="w-full bg-gray-50 py-20 px-6 md:px-20 font-[Inter]">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+    
+    {/* IZQUIERDA */}
+    <div className="md:col-span-2 space-y-12">
+
+      {/* TITULO */}
+      <div>
+        <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900 mb-4">
+          Estructura
+        </h2>
+        <p className="text-gray-600 text-base leading-relaxed max-w-xl">
+          Nuestro hockey está organizado por categorías formativas y competitivas,
+          acompañando el crecimiento de cada jugador desde edades tempranas hasta
+          Primera División.
+        </p>
+      </div>
+
+      {/* CATEGORÍAS */}
+      <div className="grid sm:grid-cols-2 gap-6">
+        
+        {[
+          { cat: "SUB 13", edad: "2018 / 2019 / 2020", profe: "Fernando Vallejos, Lucila Solorza" },
+          { cat: "SUB 16", edad: "2016 / 2017", profe: "Fernando Vallejos, Lucila Solorza" },
+          { cat: "SUB 18", edad: "2010", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
+          { cat: "Primera División", edad: "Mayores", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
+        ].map((item, i) => (
+          <div 
+            key={i} 
+            className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+          >
+            <h3 className="font-[Lato] text-lg font-bold text-gray-900">
+              {item.cat}
+            </h3>
+            <p className="text-sm text-gray-500">{item.edad}</p>
+            <p className="text-sm text-gray-600 mt-3">
+              <span className="font-semibold">Profe:</span> {item.profe}
+            </p>
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+
+    {/* DERECHA */}
+    <div className="bg-white rounded-xl shadow-md p-8 space-y-6 border border-gray-200 h-fit">
+      
+      <h2 className="text-2xl font-[Lato] font-extrabold text-gray-900">
+        Días de Entrenamiento
+      </h2>
+
+      <ul className="text-gray-600 text-sm space-y-3">
+        <li className="flex justify-between border-b pb-2">
+          <span>Inferiores</span>
+          <span className="font-medium text-gray-800">Lun - Mié</span>
+        </li>
+        <li className="flex justify-between border-b pb-2">
+          <span>Juveniles</span>
+          <span className="font-medium text-gray-800">Mar - Jue</span>
+        </li>
+        <li className="flex justify-between">
+          <span>Primera</span>
+          <span className="font-medium text-gray-800">Vie</span>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+
+  
+  
+  
+  
+)}
 
             {/* FUTBOL */}
-            {activo === "futbol" && (
-              <div className="w-full flex flex-col md:flex-row-reverse">
-                <div className="w-full md:w-1/2 h-64 md:h-auto">
-                  <img src={futbol} className="w-full h-full object-cover" />
-                </div>
+           {activo === "futbol" && (
+            <div ref={infoRef} className="w-full bg-gray-50 ">
+              <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12 py-10">
 
-                <div className="w-full md:w-1/2 px-6 md:px-16 py-12 text-black">
-                  <h2 className="text-3xl font-bold mb-4 text-[#c80000]">
-                    FÚTBOL
-                  </h2>
-
-                  <p className="mb-8">
-                    Entrenamientos formativos y competitivos para todas las edades.
-                  </p>
-
-                  <div className="space-y-5">
-                    <div className="flex gap-4">
-                      <Trophy className="text-red-600" />
-                      <div>
-                        <p className="font-semibold">Categorías</p>
-                        <p>9na · 8va · 5ta · Primera</p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <Users className="text-red-600" />
-                      <div>
-                        <p className="font-semibold">Cuerpo técnico</p>
-                        <p>Leonel Guenchullan · Raul Paiz</p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4">
-                      <MapPin className="text-red-600" />
-                      <div>
-                        <p className="font-semibold">Lugar</p>
-                        <p>Estadio Municipal - Junín de los Andes</p>
-                      </div>
-                    </div>
+                {/* IMAGEN */}
+                <div className="relative flex justify-center items-center">
+                  <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
+                    <img
+                      src={futbol}
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
                 </div>
-              </div>
-            )}
 
+                {/* TEXTO */}
+                <div className="max-w-xl text-center md:text-left">
+                  <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    FÚTBOL DEL CLUB
+                  </h2>
+
+                  <p className="text-gray-600 mb-8">
+                    Formación y competencia para todas las edades, promoviendo el desarrollo
+                    deportivo, el compromiso y el trabajo en equipo.
+                  </p>
+
+                  {/* FEATURES */}
+                  <div className="flex flex-col sm:flex-row gap-6 mb-8 justify-center md:justify-start">
+
+                    <div className="flex items-center gap-3">
+                      <div className="bg-red-500 p-3 rounded-full text-white">
+                        <Trophy size={18} />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-gray-900 font-semibold text-sm">Categorías</p>
+                        <p className="text-gray-500 text-sm">
+                          9na · 8va · 5ta · Primera
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <div className="bg-red-500 p-3 rounded-full text-white">
+                        <Users size={18} />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-gray-900 font-semibold text-sm">Cuerpo técnico</p>
+                        <p className="text-gray-500 text-sm">
+                          messi
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* UBICACIÓN */}
+                  <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
+                    <div className="bg-red-500 p-3 rounded-full text-white">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <p className="text-gray-900 font-semibold text-sm">Ubicación</p>
+                      <p className="text-gray-500 text-sm">
+                        Predio Ceos - Junín de los Andes
+                      </p>
+                    </div>
+                  </div>
+
+        
+      </div>
+    </div>
+    <div>
+    
+    <div className="flex justify-center my-10">
+  <div className="w-100 h-[2px] bg-gray-300 rounded-full"></div>
+</div>
+
+<div className="w-full bg-gray-50 py-20 px-6 md:px-20 font-[Inter]">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+    
+    {/* IZQUIERDA */}
+    <div className="md:col-span-2 space-y-12">
+
+      {/* TITULO */}
+      <div>
+        <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900 mb-4">
+          Estructura
+        </h2>
+        <p className="text-gray-600 text-base leading-relaxed max-w-xl">
+          Nuestro futbol está organizado por categorías formativas y competitivas,
+          acompañando el crecimiento de cada jugador desde edades tempranas hasta
+          Primera División.
+        </p>
+      </div>
+
+      {/* CATEGORÍAS */}
+      <div className="grid sm:grid-cols-2 gap-6">
+        
+        {[
+          { cat: "9na Division", edad: "2018 / 2019 / 2020", profe: "Raul Paiz, Leo Guenchullan" },
+          { cat: "8va Division", edad: "2016 / 2017", profe: "Raul Paiz, Leo Guenchullan" },
+          { cat: "5ta Division", edad: "2010", profe: "Leo Kreitman" },
+          { cat: "Primera División", edad: "Mayores", profe: "Lihuen Sibon" },
+        ].map((item, i) => (
+          <div 
+            key={i} 
+            className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+          >
+            <h3 className="font-[Lato] text-lg font-bold text-gray-900">
+              {item.cat}
+            </h3>
+            <p className="text-sm text-gray-500">{item.edad}</p>
+            <p className="text-sm text-gray-600 mt-3">
+              <span className="font-semibold">Profe:</span> {item.profe}
+            </p>
           </div>
-        )}
+        ))}
 
-      </main>
+      </div>
+
+    </div>
+
+    {/* DERECHA */}
+    <div className="bg-white rounded-xl shadow-md p-8 space-y-6 border border-gray-200 h-fit">
+      
+      <h2 className="text-2xl font-[Lato] font-extrabold text-gray-900">
+        Días de Entrenamiento
+      </h2>
+
+      <ul className="text-gray-600 text-sm space-y-3">
+        <li className="flex justify-between border-b pb-2">
+          <span>Inferiores</span>
+          <span className="font-medium text-gray-800">Lun - Mié</span>
+        </li>
+        <li className="flex justify-between border-b pb-2">
+          <span>Juveniles</span>
+          <span className="font-medium text-gray-800">Mar - Jue</span>
+        </li>
+        <li className="flex justify-between">
+          <span>Primera</span>
+          <span className="font-medium text-gray-800">Vie</span>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+)}
+
     </section>
   );
 }
