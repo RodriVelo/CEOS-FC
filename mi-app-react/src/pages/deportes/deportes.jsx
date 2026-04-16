@@ -2,10 +2,16 @@ import { useState, useRef } from "react";
 import futbol from "../../assets/img/deportes/futbol.jpg";
 import hockey from "../../assets/img/deportes/hockey.jpg";
 import { Users, MapPin, Trophy, Goal, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Deportes() {
   const [activo, setActivo] = useState(null);
   const infoRef = useRef(null);
+
+  const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
 
   const handleClick = (deporte) => {
     setActivo(deporte);
@@ -23,56 +29,79 @@ export default function Deportes() {
 
         {/* TITULO */}
        
-        <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Nuestros Deportes
-          </h2>
-          <p>Entrená, competí y formá parte del equipo</p>
-        </div>
+        <motion.div 
+  variants={fadeUp}
+  initial="hidden"
+  animate="show"
+  className="text-center mb-12 md:mb-16 px-4"
+>
+  <h2 className="text-3xl md:text-5xl font-bold mb-4">
+    Nuestros Deportes
+  </h2>
+  <p>Entrená, competí y formá parte del equipo</p>
+</motion.div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 ´tmax-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 max-w-5xl mx-auto">
 
-          {/* HOCKEY */}
-          <div
-            onClick={() => handleClick("hockey")}
-            className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center 
-            hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer"
-          >
-            <Goal className="w-12 h-12 mb-3 text-[#ffc800]" />
-            <h2 className="text-xl font-semibold mb-2">Hockey</h2>
-            <p className="text-gray-500">
-              Información sobre hockey, equipos y torneos.
-            </p>
-          </div>
+  {/* HOCKEY */}
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    whileHover={{ scale: 1.03 }}
+    whileTap={{ scale: 0.98 }}
+    onClick={() => handleClick("hockey")}
+    className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center cursor-pointer"
+  >
+    <Goal className="w-12 h-12 mb-3 text-[#ffc800]" />
+    <h2 className="text-xl font-semibold mb-2">Hockey</h2>
+    <p className="text-gray-500">
+      Información sobre hockey, equipos y torneos.
+    </p>
+  </motion.div>
 
-          {/* FUTBOL */}
-          <div
-            onClick={() => handleClick("futbol")}
-            className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center 
-            hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer"
-          >
-            <Trophy className="w-12 h-12 mb-3 text-[#ffc800]" />
-            <h2 className="text-xl font-semibold mb-2">Fútbol</h2>
-            <p className="text-gray-500">
-              Información sobre fútbol, ligas y competencias.
-            </p>
-          </div>
-        </div>
+  {/* FUTBOL */}
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    whileHover={{ scale: 1.03 }}
+    whileTap={{ scale: 0.98 }}
+    transition={{ delay: 0.2 }}
+    onClick={() => handleClick("futbol")}
+    className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center cursor-pointer"
+  >
+    <Trophy className="w-12 h-12 mb-3 text-[#ffc800]" />
+    <h2 className="text-xl font-semibold mb-2">Fútbol</h2>
+    <p className="text-gray-500">
+      Información sobre fútbol, ligas y competencias.
+    </p>
+  </motion.div>
+
+</div>
 
 </main>
         {/* INFO HOCKEY*/}
         {activo === "hockey" && (
-  <div className="w-full bg-gray-50 py-16">
+        <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="w-full bg-gray-50 py-16"
+>
     <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
 
       {/* IMAGEN */}
       <div className="relative flex justify-center items-center">
         <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
-          <img
-            src={hockey}
-            className="w-full h-full object-cover rounded-full"
-          />
+          <motion.img
+  src={hockey}
+  className="w-full h-full object-cover rounded-full"
+  whileHover={{ scale: 1.05 }}
+/>
         </div>
       </div>
 
@@ -165,9 +194,13 @@ export default function Deportes() {
           { cat: "SUB 18", edad: "2010", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
           { cat: "Primera División", edad: "Mayores", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
         ].map((item, i) => (
-          <div 
-            key={i} 
-            className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+          <motion.div 
+            key={i}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
           >
             <h3 className="font-[Lato] text-lg font-bold text-gray-900">
               {item.cat}
@@ -176,7 +209,7 @@ export default function Deportes() {
             <p className="text-sm text-gray-600 mt-3">
               <span className="font-semibold">Profe:</span> {item.profe}
             </p>
-          </div>
+          </motion.div>
         ))}
 
       </div>
@@ -210,7 +243,7 @@ export default function Deportes() {
   </div>
 </div>
     </div>
-  </div>
+  </motion.div>
 
   
   
@@ -220,15 +253,22 @@ export default function Deportes() {
 
             {/* FUTBOL */}
            {activo === "futbol" && (
-            <div ref={infoRef} className="w-full bg-gray-50 ">
+            <motion.div 
+              ref={infoRef}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-full bg-gray-50"
+            >
               <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12 py-10">
 
                 {/* IMAGEN */}
                 <div className="relative flex justify-center items-center">
                   <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
-                    <img
+                    <motion.img
                       src={futbol}
                       className="w-full h-full object-cover rounded-full"
+                      whileHover={{ scale: 1.05 }}
                     />
                   </div>
                 </div>
@@ -322,10 +362,14 @@ export default function Deportes() {
           { cat: "5ta Division", edad: "2010", profe: "Leo Kreitman" },
           { cat: "Primera División", edad: "Mayores", profe: "Lihuen Sibon" },
         ].map((item, i) => (
-          <div 
-            key={i} 
-            className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
-          >
+          <motion.div 
+          key={i}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
+        >
             <h3 className="font-[Lato] text-lg font-bold text-gray-900">
               {item.cat}
             </h3>
@@ -333,7 +377,7 @@ export default function Deportes() {
             <p className="text-sm text-gray-600 mt-3">
               <span className="font-semibold">Profe:</span> {item.profe}
             </p>
-          </div>
+          </motion.div>
         ))}
 
       </div>
@@ -367,7 +411,7 @@ export default function Deportes() {
   </div>
 </div>
     </div>
-  </div>
+  </motion.div>
 )}
 
     </section>
