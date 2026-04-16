@@ -19,7 +19,7 @@ export default function InformacionSocios() {
 
   return (
     <section className="w-full bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white py-25 md:pt-24  ">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 md:pt-24  ">
       <div className="max-w-6xl mx-auto px-6 pb-15">
 
         {/* Header */}
@@ -160,32 +160,30 @@ export default function InformacionSocios() {
 
       
      
-    <div className="w-full bg-gray-50 border border-gray-200  p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      
-      <div>
-        <h3 className="text-lg font-semibold text-gray-800">
-          ¿Tenés alguna consulta?
-        </h3>
-        <p className="text-gray-600 text-sm">
-          Escribinos por WhatsApp por dudas, consultas generales o más información.
-        </p>
-      </div>
+    <div className="w-full bg-zinc-100 py-20 px-6 md:px-20">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-      <a
-        href="https://wa.me/5492972405717"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-green-500 hover:bg-green-600 text-white font-medium px-5 py-3 rounded-lg transition whitespace-nowrap"
-      >
-        Consultar por WhatsApp
-      </a>
-        
+    {/* IZQUIERDA */}
+    <div className="space-y-6">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
+        PARA CONSULTAS <br /> COMUNICATE VIA MAIL O WHATSAPP
+      </h2>
+
+      <div className="w-16 h-1 bg-gradient-to-l from-[#c80000] to-black"></div>
+
+      <p className="text-zinc-500 max-w-md">
+        Si tenes alguna duda, podes comunicarte a traves de nuestro whatsapp o via mail completando el formulario. 
+      </p>
+      <a href="https://wa.me/5492972405717" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white font-medium px-5 py-3 rounded-lg transition whitespace-nowrap" > Consultar por WhatsApp </a>
     </div>
 
-    <div>
-          <Formulario></Formulario>
-        </div>
-   
+    {/* DERECHA - FORM */}
+    <div className="bg-gradient-to-b from-[#c80000] to-black rounded-3xl p-6 md:p-8">
+      <Formulario />
+    </div>
+
+  </div>
+</div>
       </main>
     </section>
   );
