@@ -21,7 +21,7 @@ export default function InfoClub() {
   return (
     <section className="w-full bg-white text-slate-900 font-['Inter']">
       
-      <main className="w-full bg-gradient-to-b from-[#c80000] to-black text-white py-25 md:py-20">
+      <main className="w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 md:pt-20">
         
         {/* CONTENEDOR GENERAL */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -224,8 +224,8 @@ export default function InfoClub() {
         Ubicación 
       </span>
       
-      <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4 leading-tight">
-        Nuestro <br /> Predio
+      <h2 className="font-['Lato'] text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
+        NUESTRO<br /> PREDIO
       </h2>
 
       <p className="text-lg text-slate-800/80 mb-8 max-w-md leading-relaxed">

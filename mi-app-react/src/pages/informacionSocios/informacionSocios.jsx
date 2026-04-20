@@ -24,8 +24,8 @@ export default function InformacionSocios() {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-white font-[Lato]">
-            Socios del Club
+          <h2 className="text-5xl font-extrabold text-white font-[Lato]">
+            SOCIOS DEL CLUB
           </h2>
           <p className="text-white mt-3 font-[Inter]">
             Sumate al club y disfrutá de beneficios exclusivos
@@ -81,6 +81,11 @@ export default function InformacionSocios() {
           </div>
         </div>
 
+        
+
+      </div>
+
+<div className="bg-white w-full ">
         {/* INFO DINAMICA */}
         {activo && (
        
@@ -156,8 +161,7 @@ export default function InformacionSocios() {
           </div>
         )}
 
-      </div>
-
+        </div>
       
      
     <div className="w-full bg-zinc-100 py-20 px-6 md:px-20">
@@ -178,9 +182,9 @@ export default function InformacionSocios() {
     </div>
 
     {/* DERECHA - FORM */}
-    <div className="bg-gradient-to-b from-[#c80000] to-black rounded-3xl p-6 md:p-8">
+    
       <Formulario />
-    </div>
+   
 
   </div>
 </div>

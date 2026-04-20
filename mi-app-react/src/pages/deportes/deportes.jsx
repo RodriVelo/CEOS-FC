@@ -35,8 +35,8 @@ export default function Deportes() {
   animate="show"
   className="text-center mb-12 md:mb-16 px-4"
 >
-  <h2 className="text-3xl md:text-5xl font-bold mb-4">
-    Nuestros Deportes
+   <h2 className="text-5xl font-extrabold text-white font-[Lato]">
+    NUESTROS DEPORTES
   </h2>
   <p>Entrená, competí y formá parte del equipo</p>
 </motion.div>
