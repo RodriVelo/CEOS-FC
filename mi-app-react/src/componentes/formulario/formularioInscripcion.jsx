@@ -29,7 +29,7 @@ export default function FormularioInscripcion() {
 
     );
 
-    const url = `https://wa.me/+522944537198?text=${mensaje}`;
+    const url = `https://wa.me/+542944537198?text=${mensaje}`;
 
     window.open(url, "_blank");
   };
