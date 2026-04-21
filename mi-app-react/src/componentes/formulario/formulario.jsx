@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { User, Mail } from "lucide-react";
+import { User, Mail, Phone } from "lucide-react";
 import Toast from "../Toast";
 
 export default function Formulario() {
@@ -81,6 +81,18 @@ export default function Formulario() {
           </div>
 
         </div>
+
+        <div className="relative w-full">
+            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Telefono"
+              required
+              className="w-60 bg-white rounded-full pl-10 pr-5 py-3 border border-[#D6D6D6] outline-none text-sm text-black placeholder:text-gray-400 focus:border-black transition"
+            />
+          </div>
+        
 
         {/* MENSAJE */}
         <textarea

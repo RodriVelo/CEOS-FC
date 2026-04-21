@@ -87,6 +87,7 @@ export default function Deportes() {
         {/* INFO HOCKEY*/}
         {activo === "hockey" && (
         <motion.div 
+        ref={infoRef}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -175,10 +176,14 @@ export default function Deportes() {
 
       {/* TITULO */}
       <div>
-        <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900 mb-4">
-          Estructura
-        </h2>
-        <p className="text-gray-600 text-base leading-relaxed max-w-xl">
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-10 bg-[#c80000]"></div>
+
+          <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900">
+            ESTRUCTURA
+          </h2>
+        </div>
+        <p className="text-gray-600 text-base leading-relaxed pt-4 max-w-xl">
           Nuestro hockey está organizado por categorías formativas y competitivas,
           acompañando el crecimiento de cada jugador desde edades tempranas hasta
           Primera División.
@@ -192,7 +197,7 @@ export default function Deportes() {
           { cat: "SUB 13", edad: "2018 / 2019 / 2020", profe: "Fernando Vallejos, Lucila Solorza" },
           { cat: "SUB 16", edad: "2016 / 2017", profe: "Fernando Vallejos, Lucila Solorza" },
           { cat: "SUB 18", edad: "2010", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
-          { cat: "Primera División", edad: "Mayores", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
+          { cat: "PRIMERA DIVSION", edad: "Mayores", profe: "Fernando Aminahuel, Juan Pipe Rocha" },
         ].map((item, i) => (
           <motion.div 
             key={i}
@@ -202,7 +207,7 @@ export default function Deportes() {
             viewport={{ once: true }}
             className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
           >
-            <h3 className="font-[Lato] text-lg font-bold text-gray-900">
+            <h3 className="font-[Lato] text-lg font-extrabold text-gray-900">
               {item.cat}
             </h3>
             <p className="text-sm text-gray-500">{item.edad}</p>
@@ -343,10 +348,14 @@ export default function Deportes() {
 
       {/* TITULO */}
       <div>
-        <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900 mb-4">
-          Estructura
-        </h2>
-        <p className="text-gray-600 text-base leading-relaxed max-w-xl">
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-10 bg-[#c80000]"></div>
+
+          <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900">
+            ESTRUCTURA
+          </h2>
+        </div>
+        <p className="text-gray-600 text-base leading-relaxed max-w-xl pt-4">
           Nuestro futbol está organizado por categorías formativas y competitivas,
           acompañando el crecimiento de cada jugador desde edades tempranas hasta
           Primera División.

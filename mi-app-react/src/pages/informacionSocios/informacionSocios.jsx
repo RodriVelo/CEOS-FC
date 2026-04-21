@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Users, CreditCard, Gift, Form } from "lucide-react";
 import Formulario from "../../componentes/formulario/formulario";
+import FormularioInscripcion from "../../componentes/formulario/formularioInscripcion";
 
 
 export default function InformacionSocios() {
@@ -20,7 +21,7 @@ export default function InformacionSocios() {
   return (
     <section className="w-full bg-white">
       <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 md:pt-24  ">
-      <div className="max-w-6xl mx-auto px-6 pb-15">
+      <div className="max-w-6xl mx-auto px-6 pb-20">
 
         {/* Header */}
         <div className="text-center mb-14">
@@ -89,22 +90,51 @@ export default function InformacionSocios() {
         {/* INFO DINAMICA */}
         {activo && (
        
-          <div ref={infoRef} className="mt-16 bg-gray-50 rounded-3xl p-8 md:p-12">
+          <div ref={infoRef} className="mt-16 bg-gray-50 rounded-3xl px-25 py-10 md:px-25 md:py-10">
 
             {/* BENEFICIOS */}
             {activo === "beneficios" && (
               <div>
-                <h3 className="text-3xl font-bold mb-6 text-[#c80000]">
-                  Beneficios para Socios
+                <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight mb-">
+                  BENEFICIOS PARA SOCIOS
                 </h3>
 
                 <ul className="grid md:grid-cols-2 gap-4 text-gray-700">
-                  <li>• Acceso a todas las instalaciones</li>
-                  <li>• Prioridad en eventos deportivos</li>
-                  <li>• Descuentos en actividades</li>
-                  <li>• Participación en torneos</li>
-                  <li>• Noticias exclusivas del club</li>
-                  <li>• Sorteos mensuales</li>
+                 <li className="flex flex-col">
+                    <span className="font-semibold text-gray-900">
+                      Acceso completo a las instalaciones
+                    </span>
+                    <span className="text-sm text-gray-600">
+                      Disfrutá libremente del predio del club, con acceso al gimnasio y a la cancha en todo momento.
+                    </span>
+                  </li>
+
+                  <li className="flex flex-col">
+                  <span className="font-semibold text-gray-900">
+                    Prioridad en eventos deportivos
+                  </span>
+                  <span className="text-sm text-gray-600">
+                   Contarás con prioridad para inscribirte y participar en torneos, partidos y eventos deportivos del club, asegurando tu lugar antes que el resto.
+                  </span>
+                </li>
+                   <li className="flex flex-col">
+                  <span className="font-semibold text-gray-900">
+                    Descuentos en actividades.
+                  </span>
+                  <span className="text-sm text-gray-600">
+                   Disfrutá de beneficios y descuentos especiales en cada actividad del club, para que puedas participar más y pagar menos.
+                  </span>
+                </li>
+
+                 
+                   <li className="flex flex-col">
+                  <span className="font-semibold text-gray-900">
+                    Participacion de torneos.
+                  </span>
+                  <span className="text-sm text-gray-600">
+                  Formá parte de competencias oficiales representando al club: en fútbol participamos del Torneo local y Lifune Sur, mientras que en Hockey competimos en la Liga Cordillerana y el Regional Neuquino.
+                  </span>
+                </li>
                 </ul>
               </div>
             )}
@@ -112,21 +142,49 @@ export default function InformacionSocios() {
             {/* ASOCIARTE */}
             {activo === "asociarte" && (
               <div>
-                <h3 className="text-3xl font-bold mb-6 text-[#c80000]">
-                  ¿Cómo asociarte?
+                <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight mb-">
+                  COMO ASOCIARTE?
                 </h3>
 
                 <p className="mb-6 text-gray-700">
-                  Podés hacerte socio acercándote a la secretaría del club
-                  o completando el formulario online.
+                  Para poder asociarte tenes dos opciones:
                 </p>
 
-                <ul className="space-y-3 text-gray-700">
-                  <li>• Completar formulario</li>
-                  <li>• Presentar DNI</li>
-                  <li>• Elegir categoría</li>
-                  <li>• Abonar primera cuota</li>
-                </ul>
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+
+  {/* IZQUIERDA */}
+  <div className="w-full md:w-1/2">
+    <p className="mb-6 text-gray-700">
+      Podes acercarte a la oficina del club ubicada en Carilafquen y Lanin, B. Jardines del Chimehuin
+    </p>
+
+    <p className="mb-6 text-gray-700 font-bold">
+      CON FOTOCOPIA DE DNI
+    </p>
+
+    <div className="relative group">
+      <div className="absolute -inset-1 bg-slate-900/10 rounded-2xl blur transition duration-300 group-hover:opacity-100"></div>
+
+      <div className="relative overflow-hidden rounded-xl shadow-2xl bg-white p-2">
+        <iframe
+          src="https://www.google.com/maps?q=-39.970552,-71.0791061&z=15&output=embed"
+          width="100%"
+          height="300"
+          style={{ border: 0 }}
+          className="rounded-lg"
+          loading="lazy"
+          title="Mapa del predio"
+        />
+      </div>
+    </div>
+  </div>
+
+  {/* DERECHA */}
+  <div className="w-full md:w-1/2">
+    <FormularioInscripcion />
+  </div>
+
+</div>
 
                 {/* <button className="mt-8 bg-[#c80000] hover:bg-black text-white px-6 py-3 rounded-xl transition">
                   Asociarme
@@ -164,7 +222,8 @@ export default function InformacionSocios() {
         </div>
       
      
-    <div className="w-full bg-zinc-100 py-20 px-6 md:px-20">
+    <div className="w-full bg-zinc-100 py-20 px-6 md:px-20"> 
+      <div className="w-100 h-2 bg-gradient-to-l from-[#c80000] to-black rounded-full mb-10 mx-auto"></div>
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
     {/* IZQUIERDA */}
