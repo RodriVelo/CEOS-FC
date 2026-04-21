@@ -19,14 +19,13 @@ export default function FormularioInscripcion() {
 
     const mensaje = encodeURIComponent(
       `Hola, quiero inscribirme:
-            Nombre: ${nombres} ${apellidos}
-            DNI: ${dni}
-            Fecha de nacimiento: ${fechaNacimiento}
-            Email: ${email}
-            Teléfono: ${telefono}
-            Categoría: ${categoria}
-            `
 
+      👤 Nombre: ${nombres} ${apellidos}
+      🆔 DNI: ${dni}
+      🎂 Fecha de nacimiento: ${fechaNacimiento}
+      📧 Email: ${email}
+      📱 Teléfono: ${telefono}
+      🏷️ Categoría: ${categoria}`,
     );
 
     const url = `https://wa.me/+542944537198?text=${mensaje}`;
@@ -37,10 +36,8 @@ export default function FormularioInscripcion() {
   return (
     <div className="bg-gradient-to-b from-white to-[#E8E8E8] rounded-3xl p-6 md:p-8">
       <form ref={form} onSubmit={subbmit} className="space-y-4">
-
         {/* NOMBRE Y APELLIDO */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
           <div className="relative w-full">
             <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input
@@ -62,7 +59,6 @@ export default function FormularioInscripcion() {
               className="w-full bg-white rounded-full pl-10 pr-5 py-3 border border-[#D6D6D6] outline-none text-sm text-black placeholder:text-gray-400 focus:border-black transition"
             />
           </div>
-
         </div>
 
         {/* DNI */}
@@ -78,14 +74,14 @@ export default function FormularioInscripcion() {
         </div>
 
         {/* FECHA DE NACIMIENTO */}
-            <div className="relative w-full">
-            <input
-                type="date"
-                name="fechaNacimiento"
-                required
-                className="w-full bg-white rounded-full px-5 py-3 border border-[#D6D6D6] outline-none text-sm text-gray-600 focus:border-black transition"
-            />
-            </div>
+        <div className="relative w-full">
+          <input
+            type="date"
+            name="fechaNacimiento"
+            required
+            className="w-full bg-white rounded-full px-5 py-3 border border-[#D6D6D6] outline-none text-sm text-gray-600 focus:border-black transition"
+          />
+        </div>
 
         {/* EMAIL */}
         <div className="relative w-full">
@@ -131,10 +127,9 @@ export default function FormularioInscripcion() {
             type="submit"
             className="bg-[#c80000] text-white px-8 py-3 rounded-full text-sm font-semibold hover:bg-black transition"
           >
-            Enviar inscripción por Whatsapp
+            Enviar
           </button>
         </div>
-
       </form>
     </div>
   );
