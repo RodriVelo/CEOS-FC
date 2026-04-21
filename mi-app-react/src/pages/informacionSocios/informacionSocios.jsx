@@ -90,7 +90,7 @@ export default function InformacionSocios() {
         {/* INFO DINAMICA */}
         {activo && (
        
-          <div ref={infoRef} className="mt-16 bg-gray-50 rounded-3xl px-25 py-10 md:px-25 md:py-10">
+          <div ref={infoRef} className="mt-16 bg-gray-50 rounded-3xl px-10 py-10 md:px-25 md:py-10">
 
             {/* BENEFICIOS */}
             {activo === "beneficios" && (
@@ -223,7 +223,7 @@ export default function InformacionSocios() {
       
      
     <div className="w-full bg-zinc-100 py-20 px-6 md:px-20"> 
-      <div className="w-100 h-2 bg-gradient-to-l from-[#c80000] to-black rounded-full mb-10 mx-auto"></div>
+      <div className="w-1/2 md:w-full h-2 bg-gradient-to-l from-[#c80000] to-black rounded-full mb-10 mx-auto"></div>
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
     {/* IZQUIERDA */}
