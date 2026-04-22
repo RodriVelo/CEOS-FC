@@ -20,12 +20,12 @@ export default function FormularioInscripcion() {
     const mensaje = encodeURIComponent(
       `Hola, quiero inscribirme:
 
-      👤 Nombre: ${nombres} ${apellidos}
-      🆔 DNI: ${dni}
-      🎂 Fecha de nacimiento: ${fechaNacimiento}
-      📧 Email: ${email}
-      📱 Teléfono: ${telefono}
-      🏷️ Categoría: ${categoria}`,
+      • Nombre: ${nombres} ${apellidos}
+      • DNI: ${dni}
+      • Fecha de nacimiento: ${fechaNacimiento}
+      • Email: ${email}
+      • Teléfono: ${telefono}
+      • Categoría: ${categoria}`,
     );
 
     const url = `https://wa.me/+542944537198?text=${mensaje}`;
@@ -34,7 +34,7 @@ export default function FormularioInscripcion() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-white to-[#E8E8E8] rounded-3xl p-6 md:p-8">
+    <div className="bg-gradient-to-b from-white to-white rounded-3xl p-6 md:p-8">
       <form ref={form} onSubmit={subbmit} className="space-y-4">
         {/* NOMBRE Y APELLIDO */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -73,8 +73,10 @@ export default function FormularioInscripcion() {
           />
         </div>
 
-        {/* FECHA DE NACIMIENTO */}
-        <div className="relative w-full">
+       <div className="relative w-full">
+          <label className="text-sm text-gray-500 ml-2">
+            Fecha de nacimiento
+          </label>
           <input
             type="date"
             name="fechaNacimiento"

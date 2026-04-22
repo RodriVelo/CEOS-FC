@@ -30,7 +30,7 @@ export default function InformacionSocios() {
             className="text-center mb-14"
           >
             <h2 className="text-5xl font-extrabold text-white font-[Lato]">
-              SOCIOS DEL CLUB
+              CONSULTAS
             </h2>
             <p className="text-white mt-3 font-[Inter]">
               Sumate al club y disfrutá de beneficios exclusivos

@@ -54,6 +54,9 @@ export default function Formulario() {
       <Toast show={toast.show} type={toast.type} message={toast.message} />
 
       <form ref={form} onSubmit={sendEmail} className="space-y-4">
+        <p className="text-zinc-500 max-w-md">
+               Consultar via mail
+              </p>
 
         {/* FILA 1 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
