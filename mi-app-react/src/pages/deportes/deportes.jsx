@@ -3,6 +3,22 @@ import futbol from "../../assets/img/deportes/futbol.jpg";
 import hockey from "../../assets/img/deportes/hockey.jpg";
 import { Users, MapPin, Trophy, Goal, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import foto8va1 from "../../assets/img/deportes/octava1.jpg";
+import foto8va2 from "../../assets/img/deportes/octava2.jpg";
+import foto9na1 from "../../assets/img/deportes/novena1.jpg";
+import foto9na2 from "../../assets/img/deportes/novena2.jpg";
+import foto5ta1 from "../../assets/img/deportes/quinta1.jpg";
+import foto5ta2 from "../../assets/img/deportes/quinta2.jpg";
+import foto1ra1 from "../../assets/img/deportes/primera1.jpg";
+import foto1ra2 from "../../assets/img/deportes/primera2.jpg";
+import foto141 from "../../assets/img/deportes/sub141.jpg";
+import foto142 from "../../assets/img/deportes/sub142.jpg";
+import foto161 from "../../assets/img/deportes/sub161.jpg";
+import foto162 from "../../assets/img/deportes/sub162.jpg";
+import foto181 from "../../assets/img/deportes/sub181.jpg";
+import foto182 from "../../assets/img/deportes/sub182.jpg";
+import foto1raH1 from "../../assets/img/deportes/primeraH1.jpg";
+import foto1raH2 from "../../assets/img/deportes/primeraH2.jpg";
 
 export default function Deportes() {
   const [activo, setActivo] = useState(null);
@@ -23,9 +39,69 @@ export default function Deportes() {
     }, 100);
   };
 
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const dataFutbol = [
+    {
+      cat: "9na Division",
+      edad: "2018 / 2019 / 2020",
+      profe: "Raul Paiz, Leo Guenchullan",
+      imgs: [foto9na1, foto9na2],
+    },
+    {
+      cat: "8va Division",
+      edad: "2016 / 2017",
+      profe: "Raul Paiz, Leo Guenchullan",
+      imgs: [foto8va1, foto8va2],
+    },
+    {
+      cat: "5ta Division",
+      edad: "2010",
+      profe: "Leo Kreitman",
+      imgs: [foto5ta1, foto5ta2],
+    },
+    {
+      cat: "PRIMERA DIVISION",
+      edad: "Mayores",
+      profe: "Lihuen Sibon",
+      imgs: [foto1ra1, foto1ra2],
+    },
+  ];
+
+  const dataHockey = [
+    {
+      cat: "SUB 13",
+      edad: "2018 / 2019 / 2020",
+      profe: "Fernando Vallejos, Lucila Solorza",
+      imgs: [foto141, foto142],
+    },
+    {
+      cat: "SUB 16",
+      edad: "2016 / 2017",
+      profe: "Fernando Vallejos, Lucila Solorza",
+      imgs: [foto161, foto162],
+    },
+    {
+      cat: "SUB 18",
+      edad: "2010",
+      profe: "Fernando Aminahuel, Juan Pipe Rocha",
+      imgs: [foto181, foto182],
+    },
+    {
+      cat: "PRIMERA DIVISION",
+      edad: "Mayores",
+      profe: "Fernando Aminahuel, Juan Pipe Rocha",
+      imgs: [foto1raH1, foto1raH2],
+    },
+  ];
+
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section id="deportes" className="bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 md:pt-24">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-24">
         {/* TITULO */}
 
         <motion.div
@@ -129,95 +205,83 @@ export default function Deportes() {
 
                 <div className="flex items-center gap-3">
                   <div className="bg-red-500 p-3 rounded-full text-white">
-                    <Users size={18} />
+                    <MapPin size={18} />
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-sm">Cuerpo técnico</p>
-                    <p className="text-gray-500 text-sm">Vallejos · Solorza</p>
+                    <p className="font-semibold text-sm">Ubicación</p>
+                    <p className="text-gray-500 text-sm">
+                      {" "}
+                      Cancha Municipal - Junín de los Andes
+                    </p>
                   </div>
-                </div>
-              </div>
-
-              {/* UBICACIÓN */}
-              <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
-                <div className="bg-red-500 p-3 rounded-full text-white">
-                  <MapPin size={18} />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">Ubicación</p>
-                  <p className="text-gray-500 text-sm">
-                    Cancha Municipal - Junín de los Andes
-                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <div className="flex justify-center my-10">
+            <div className="flex justify-center">
               <div className="w-100 h-[2px] bg-gray-300 rounded-full"></div>
             </div>
 
-            <div className="w-full bg-gray-50 py-20 px-6 md:px-20 font-[Inter]">
+            <div className="w-full bg-gray-50 py-10 px-6 md:px-20 font-[Inter]">
               <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
                 {/* IZQUIERDA */}
                 <div className="md:col-span-2 space-y-12">
-                  {/* TITULO */}
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-10 bg-[#c80000]"></div>
+                  <div className="space-y-4">
+                    {dataHockey.map((item, i) => (
+                      <div key={i} className="w-full max-w-4xl mx-auto">
+                        {/* Card */}
+                        <div
+                          onClick={() => toggle(i)}
+                          className="cursor-pointer bg-white border border-gray-200 rounded-xl shadow-md p-5 flex items-center justify-between hover:shadow-lg transition-all"
+                        >
+                          <div>
+                            <h2 className="text-xl font-bold font-['Lato'] text-gray-900">
+                              {item.cat}
+                            </h2>
+                            <p className="text-sm text-gray-500 font-['Inter']">
+                              Click para ver más información
+                            </p>
+                          </div>
 
-                      <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900">
-                        ESTRUCTURA
-                      </h2>
-                    </div>
-                    <p className="text-gray-600 text-base leading-relaxed pt-4 max-w-xl">
-                      Nuestro hockey está organizado por categorías formativas y
-                      competitivas, acompañando el crecimiento de cada jugador
-                      desde edades tempranas hasta Primera División.
-                    </p>
-                  </div>
+                          <span
+                            className={`transition-transform ${
+                              openIndex === i ? "rotate-180" : ""
+                            }`}
+                          >
+                            ▼
+                          </span>
+                        </div>
 
-                  {/* CATEGORÍAS */}
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    {[
-                      {
-                        cat: "SUB 13",
-                        edad: "2018 / 2019 / 2020",
-                        profe: "Fernando Vallejos, Lucila Solorza",
-                      },
-                      {
-                        cat: "SUB 16",
-                        edad: "2016 / 2017",
-                        profe: "Fernando Vallejos, Lucila Solorza",
-                      },
-                      {
-                        cat: "SUB 18",
-                        edad: "2010",
-                        profe: "Fernando Aminahuel, Juan Pipe Rocha",
-                      },
-                      {
-                        cat: "PRIMERA DIVSION",
-                        edad: "Mayores",
-                        profe: "Fernando Aminahuel, Juan Pipe Rocha",
-                      },
-                    ].map((item, i) => (
-                      <motion.div
-                        key={i}
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
-                      >
-                        <h3 className="font-[Lato] text-lg font-extrabold text-gray-900">
-                          {item.cat}
-                        </h3>
-                        <p className="text-sm text-gray-500">{item.edad}</p>
-                        <p className="text-sm text-gray-600 mt-3">
-                          <span className="font-semibold">Profe:</span>{" "}
-                          {item.profe}
-                        </p>
-                      </motion.div>
+                        {/* Contenido */}
+                        <div
+                          className={`overflow-hidden transition-all duration-500 ${
+                            openIndex === i ? "max-h-[500px] mt-4" : "max-h-0"
+                          }`}
+                        >
+                          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                            <p className="text-gray-600 mb-2">
+                              <span className="font-semibold">Edades:</span>{" "}
+                              {item.edad}
+                            </p>
+
+                            <p className="text-gray-600 mb-4">
+                              <span className="font-semibold">Profesores:</span>{" "}
+                              {item.profe}
+                            </p>
+
+                            <div className="flex gap-4">
+                              {item.imgs.map((img, idx) => (
+                                <img
+                                  key={idx}
+                                  src={img}
+                                  className="w-1/2 h-40 object-cover rounded-lg"
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -303,99 +367,84 @@ export default function Deportes() {
 
                 <div className="flex items-center gap-3">
                   <div className="bg-red-500 p-3 rounded-full text-white">
-                    <Users size={18} />
+                    <MapPin size={18} />
                   </div>
                   <div className="text-left">
                     <p className="text-gray-900 font-semibold text-sm">
-                      Cuerpo técnico
+                      Ubicación
                     </p>
-                    <p className="text-gray-500 text-sm">messi</p>
+                    <p className="text-gray-500 text-sm">
+                      Predio Ceos - Junín de los Andes
+                    </p>
                   </div>
-                </div>
-              </div>
-
-              {/* UBICACIÓN */}
-              <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
-                <div className="bg-red-500 p-3 rounded-full text-white">
-                  <MapPin size={18} />
-                </div>
-                <div>
-                  <p className="text-gray-900 font-semibold text-sm">
-                    Ubicación
-                  </p>
-                  <p className="text-gray-500 text-sm">
-                    Predio Ceos - Junín de los Andes
-                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <div className="flex justify-center my-10">
+            <div className="flex justify-center">
               <div className="w-100 h-[2px] bg-gray-300 rounded-full"></div>
             </div>
 
-            <div className="w-full bg-gray-50 py-20 px-6 md:px-20 font-[Inter]">
+            <div className="w-full bg-gray-50 py-10 px-6 md:px-20 font-[Inter]">
               <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
                 {/* IZQUIERDA */}
                 <div className="md:col-span-2 space-y-12">
-                  {/* TITULO */}
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-10 bg-[#c80000]"></div>
+                  <div className="space-y-4">
+                    {dataFutbol.map((item, i) => (
+                      <div key={i} className="w-full max-w-4xl mx-auto">
+                        {/* Card */}
+                        <div
+                          onClick={() => toggle(i)}
+                          className="cursor-pointer bg-white border border-gray-200 rounded-xl shadow-md p-5 flex items-center justify-between hover:shadow-lg transition-all"
+                        >
+                          <div>
+                            <h2 className="text-xl font-bold font-['Lato'] text-gray-900">
+                              {item.cat}
+                            </h2>
+                            <p className="text-sm text-gray-500 font-['Inter']">
+                              Click para ver más información
+                            </p>
+                          </div>
 
-                      <h2 className="text-3xl md:text-4xl font-[Lato] font-extrabold text-gray-900">
-                        ESTRUCTURA
-                      </h2>
-                    </div>
-                    <p className="text-gray-600 text-base leading-relaxed max-w-xl pt-4">
-                      Nuestro futbol está organizado por categorías formativas y
-                      competitivas, acompañando el crecimiento de cada jugador
-                      desde edades tempranas hasta Primera División.
-                    </p>
-                  </div>
+                          <span
+                            className={`transition-transform ${
+                              openIndex === i ? "rotate-180" : ""
+                            }`}
+                          >
+                            ▼
+                          </span>
+                        </div>
 
-                  {/* CATEGORÍAS */}
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    {[
-                      {
-                        cat: "9na Division",
-                        edad: "2018 / 2019 / 2020",
-                        profe: "Raul Paiz, Leo Guenchullan",
-                      },
-                      {
-                        cat: "8va Division",
-                        edad: "2016 / 2017",
-                        profe: "Raul Paiz, Leo Guenchullan",
-                      },
-                      {
-                        cat: "5ta Division",
-                        edad: "2010",
-                        profe: "Leo Kreitman",
-                      },
-                      {
-                        cat: "Primera División",
-                        edad: "Mayores",
-                        profe: "Lihuen Sibon",
-                      },
-                    ].map((item, i) => (
-                      <motion.div
-                        key={i}
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
-                      >
-                        <h3 className="font-[Lato] text-lg font-bold text-gray-900">
-                          {item.cat}
-                        </h3>
-                        <p className="text-sm text-gray-500">{item.edad}</p>
-                        <p className="text-sm text-gray-600 mt-3">
-                          <span className="font-semibold">Profe:</span>{" "}
-                          {item.profe}
-                        </p>
-                      </motion.div>
+                        {/* Contenido */}
+                        <div
+                          className={`overflow-hidden transition-all duration-500 ${
+                            openIndex === i ? "max-h-[500px] mt-4" : "max-h-0"
+                          }`}
+                        >
+                          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                            <p className="text-gray-600 mb-2">
+                              <span className="font-semibold">Edades:</span>{" "}
+                              {item.edad}
+                            </p>
+
+                            <p className="text-gray-600 mb-4">
+                              <span className="font-semibold">Profesores:</span>{" "}
+                              {item.profe}
+                            </p>
+
+                            <div className="flex gap-4">
+                              {item.imgs.map((img, idx) => (
+                                <img
+                                  key={idx}
+                                  src={img}
+                                  className="w-1/2 h-40 object-cover rounded-lg"
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>

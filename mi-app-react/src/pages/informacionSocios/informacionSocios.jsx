@@ -3,6 +3,7 @@ import { Users, CreditCard, Gift, Form } from "lucide-react";
 import Formulario from "../../componentes/formulario/formulario";
 import FormularioInscripcion from "../../componentes/formulario/formularioInscripcion";
 import { motion } from "framer-motion";
+import {Phone} from "lucide-react";
 
 export default function InformacionSocios() {
   const [activo, setActivo] = useState(null);
@@ -30,7 +31,7 @@ export default function InformacionSocios() {
             className="text-center mb-14"
           >
             <h2 className="text-5xl font-extrabold text-white font-[Lato]">
-              CONSULTAS
+              CONSULTAS / INFORMACION
             </h2>
             <p className="text-white mt-3 font-[Inter]">
               Sumate al club y disfrutá de beneficios exclusivos
@@ -61,6 +62,7 @@ export default function InformacionSocios() {
               className="cursor-pointer bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
             >
               <Gift className="text-[#c80000] mb-3" />
+
               <h3 className="text-xl font-bold mb-4 text-[#c80000] font-[Lato]">
                 Beneficios
               </h3>
@@ -123,9 +125,13 @@ export default function InformacionSocios() {
               {/* BENEFICIOS */}
               {activo === "beneficios" && (
                 <div>
-                  <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight mb-">
-                    BENEFICIOS PARA SOCIOS
-                  </h3>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-10 bg-[#c80000]"></div>
+
+                    <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
+                      BENEFICIOS PARA SOCIOS
+                    </h3>
+                  </div>
 
                   <ul className="grid md:grid-cols-2 gap-4 text-gray-700">
                     <li className="flex flex-col">
@@ -176,76 +182,87 @@ export default function InformacionSocios() {
 
               {/* ASOCIARTE */}
               {activo === "asociarte" && (
-               <div className="w-full space-y-8">
-  <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
-    ¿CÓMO ASOCIARTE?
-  </h3>
+                <div className="w-full space-y-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-10 bg-[#c80000]"></div>
 
-  <p className="text-gray-700">
-    Para asociarte al club, podés elegir entre estas dos opciones:
-  </p>
+                    <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
+                      ¿CÓMO ASOCIARTE?
+                    </h3>
+                  </div>
 
-  <div className="grid md:grid-cols-2 gap-10">
-    
-    {/* PRESENCIAL */}
-    <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-5">
-      <p className="font-semibold text-gray-900">
-        Asociación presencial
-      </p>
+                  <p className="text-gray-700">
+                    Para asociarte al club, podés elegir entre estas dos
+                    opciones:
+                  </p>
 
-      <p className="text-sm text-gray-600">
-        Acercate a la oficina del club ubicada en{" "}
-        <span className="font-medium text-gray-800">
-          Carilafquen y Lanin, B. Jardines del Chimehuin
-        </span>.
-      </p>
+                  <div className="grid md:grid-cols-2 gap-10">
+                    {/* PRESENCIAL */}
+                    <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-5">
+                      <p className="font-semibold text-gray-900">
+                        Asociación presencial
+                      </p>
 
-      <p className="text-sm font-semibold text-[#c80000]">
-        Con fotocopia de DNI
-      </p>
+                      <p className="text-sm text-gray-600">
+                        Acercate a la oficina del club ubicada en{" "}
+                        <span className="font-medium text-gray-800">
+                          Carilafquen y Lanin, B. Jardines del Chimehuin
+                        </span>
+                        .
+                      </p>
 
-      <div className="relative group">
-        <div className="absolute -inset-1 bg-slate-900/10 rounded-2xl blur transition duration-300 group-hover:opacity-100"></div>
+                      <p className="text-sm font-semibold text-[#c80000]">
+                        Con fotocopia de DNI
+                      </p>
 
-        <div className="relative overflow-hidden rounded-xl shadow-2xl bg-white p-2">
-          <iframe
-            src="https://www.google.com/maps?q=-39.970552,-71.0791061&z=15&output=embed"
-            width="100%"
-            height="300"
-            style={{ border: 0 }}
-            className="rounded-lg"
-            loading="lazy"
-            title="Mapa del predio"
-          />
-        </div>
-      </div>
-    </div>
+                      <div className="relative group">
+                        <div className="absolute -inset-1 bg-slate-900/10 rounded-2xl blur transition duration-300 group-hover:opacity-100"></div>
 
-    {/* DIGITAL */}
-    <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-5">
-      <p className="font-semibold text-gray-900">
-        Asociación online
-      </p>
+                        <div className="relative overflow-hidden rounded-xl shadow-2xl bg-white p-2">
+                          <iframe
+                            src="https://www.google.com/maps?q=-39.970552,-71.0791061&z=15&output=embed"
+                            width="100%"
+                            height="300"
+                            style={{ border: 0 }}
+                            className="rounded-lg"
+                            loading="lazy"
+                            title="Mapa del predio"
+                          />
+                        </div>
+                      </div>
+                    </div>
 
-      <p className="text-sm text-gray-600">
-        Completá el formulario y envialo por WhatsApp para iniciar el proceso de inscripción. Una vez enviada tu solicitud, recibiras una respuesta de confirmacion para realizar el pago. 
-      </p>
+                    {/* DIGITAL */}
+                    <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-5">
+                      <p className="font-semibold text-gray-900">
+                        Asociación online
+                      </p>
 
-      <div>
-        <FormularioInscripcion />
-      </div>
-    </div>
+                      <p className="text-sm text-gray-600">
+                        Completá el formulario y envialo por WhatsApp para
+                        iniciar el proceso de inscripción. Una vez enviada tu
+                        solicitud, recibiras una respuesta de confirmacion para
+                        realizar el pago.
+                      </p>
 
-  </div>
-</div>
+                      <div>
+                        <FormularioInscripcion />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               )}
 
               {/* CUOTAS */}
               {activo === "cuotas" && (
                 <div className="w-full space-y-6">
-                  <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
-                    PAGO DE CUOTAS
-                  </h3>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-10 bg-[#c80000]"></div>
+
+                    <h3 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
+                      PAGO DE CUOTAS
+                    </h3>
+                  </div>
 
                   <p className="text-gray-700">
                     Podés abonar tu cuota mensual de forma presencial o digital.
@@ -279,9 +296,10 @@ export default function InformacionSocios() {
 
                       <div className="pt-2 border-t border-gray-200">
                         <p className="text-sm text-gray-500">WhatsApp</p>
-                        <p className="text-lg font-semibold text-gray-900 tracking-wide">
-                          2944 123123
-                        </p>
+                        <p className="flex items-center gap-2 text-lg font-semibold text-gray-900 tracking-wide">
+                            <Phone className="w-5 h-5 text-[#c80000]" />
+                            +54 9 2972 405717
+                          </p>
                       </div>
                     </div>
                     <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-4">
