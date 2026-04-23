@@ -200,9 +200,7 @@ export default function Home() {
   </div>
 </section>
 
-<section className="bg-white py-20">
 
-</section>
     </main>
   );
 }
