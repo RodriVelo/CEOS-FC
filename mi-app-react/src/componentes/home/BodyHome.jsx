@@ -179,7 +179,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-black via-red-900 to-black py-16 flex justify-center">
+      {/* <section className="bg-gradient-to-r from-black via-red-900 to-black py-16 flex justify-center">
   <div className="text-center max-w-xl px-4">
 
     <h3 className="text-4xl md:text-5xl font-extrabold text-white font-['Lato']">
@@ -198,7 +198,7 @@ export default function Home() {
     </button>
 
   </div>
-</section>
+</section> */}
 
 
     </main>
