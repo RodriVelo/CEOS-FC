@@ -116,7 +116,7 @@ export default function FormularioInscripcion() {
             required
             className="w-full bg-white rounded-full px-5 py-3 border border-[#D6D6D6] outline-none text-sm text-gray-600"
           >
-            <option value="">Seleccionar categoría</option>
+            <option value="">Categoría</option>
             <option value="Fútbol">Fútbol</option>
             <option value="Hockey">Hockey</option>
             <option value="Externo">Externo</option>

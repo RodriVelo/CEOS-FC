@@ -101,8 +101,10 @@ export default function Deportes() {
 
   return (
     <section id="deportes" className="bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-24">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-30">
         {/* TITULO */}
+
+       
 
         <motion.div
           variants={fadeUp}
@@ -110,7 +112,7 @@ export default function Deportes() {
           animate="show"
           className="text-center mb-12 md:mb-16 px-4"
         >
-          <h2 className="text-5xl font-extrabold text-white font-[Lato]">
+          <h2 className="text-4xl md:text-5xl pb-2 font-extrabold text-white font-[Lato]">
             NUESTROS DEPORTES
           </h2>
           <p>Entrená, competí y formá parte del equipo</p>

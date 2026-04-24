@@ -4,7 +4,19 @@ import Carrusel from "../carrusel/carrusel";
 import fotoFutbol from "../../assets/img/deportes/futbol.jpg";
 import fotoHockey from "../../assets/img/deportes/hockey.jpg";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+
+import fotoFutbol2 from "../../assets/img/home/futbol1.jpg";
+import fotoHockey2 from "../../assets/img/home/hockey1.jpg";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useMotionValueEvent,
+} from "framer-motion";
+import { useEffect, useState } from "react";
+
+import Counter from "./counter";
 
 export default function Home() {
   const fadeUp = {
@@ -154,7 +166,7 @@ export default function Home() {
               — SOBRE DISCIPLINAS
             </p>
 
-            <h2 className="font-['Lato'] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter text-black uppercase leading-none mb-4">
+            <h2 className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter text-black uppercase leading-none mb-4">
               Deportes
             </h2>
 
@@ -179,28 +191,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="bg-gradient-to-r from-black via-red-900 to-black py-16 flex justify-center">
-  <div className="text-center max-w-xl px-4">
+      <section className="flex flex-col lg:flex-row justify-center lg:justify-start bg-white py-5 gap-10 items-center overflow-hidden">
+        {/* Barra lateral: se oculta en móviles para no romper el flujo, o puedes dejarla */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="hidden lg:block bg-gradient-to-b from-[#c80000] to-black w-[60px] h-80"
+        ></motion.div>
 
-    <h3 className="text-4xl md:text-5xl font-extrabold text-white font-['Lato']">
-      Aboná tus cuotas
-    </h3>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="flex flex-col items-center justify-center text-center px-4"
+        >
+          <h2 className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter text-black uppercase leading-none mb-4">
+            POR QUE <span className="text-[#c80000] ">ELEGIRNOS?</span>
+          </h2>
 
-    <p className="mt-4 text-zinc-200 text-base md:text-lg font-['Inter']">
-      Recordá abonar tu cuota. Podés hacerlo de forma online o presencial.
-    </p>
+          <p className="text-gray-800 max-w-xl mt-4 text-sm md:text-base">
+            En CEOS no solo jugamos ni competimos. Construimos una familia donde
+            cada persona puede crecer, superarse y sentirse parte de algo más
+            grande.
+          </p>
 
-    <button 
-      onClick={() => { navega('informacionSocios') }} 
-      className="mt-6 bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-zinc-200 transition"
-    >
-      Más información
-    </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center py-10 gap-8">
+            {/* Stat 1 */}
+            <div className="flex items-center gap-2">
+              <h3 className="text-5xl md:text-5xl text-gray-900 font-extrabold">
+                <Counter to={200} prefix="+" />
+              </h3>
+              <p className="text-black text-left leading-tight text-sm md:text-base">
+                Jugadoras/es <br /> en deportes
+              </p>
+            </div>
 
-  </div>
-</section> */}
+            {/* Línea vertical (oculta en móvil si están apilados) */}
+            <div className="hidden sm:block w-[1px] h-10 bg-gray-300"></div>
 
+            {/* Stat 2 */}
+            <div className="flex items-center gap-2">
+              <h3 className="text-6xl md:text-5xl text-gray-900 font-extrabold">
+                <Counter to={400} prefix="+" />
+              </h3>
+              <p className="text-black text-sm md:text-base">Socios/as</p>
+            </div>
+          </div>
+        </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-5 px-4 lg:px-0"
+        >
+          <motion.img
+            whileHover={{ scale: 1.05 }}
+            src={fotoHockey2}
+            className="w-full max-w-[350px] h-[200px] md:max-w-[400px] lg:w-[460px] lg:h-[180px] object-cover lg:pl-15 pl-10   shadow-md lg:shadow-none"
+          />
+          <motion.img
+            whileHover={{ scale: 1.05 }}
+            src={fotoFutbol2}
+            className="w-full max-w-[350px] h-[200px] md:max-w-[400px] lg:w-[460px] lg:h-[180px] object-cover lg:pr-15 pr-10 shadow-md lg:shadow-none"
+          />
+        </motion.div>
+      </section>
     </main>
   );
 }

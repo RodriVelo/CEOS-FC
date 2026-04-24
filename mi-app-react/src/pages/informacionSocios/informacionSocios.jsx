@@ -3,7 +3,10 @@ import { Users, CreditCard, Gift, Form } from "lucide-react";
 import Formulario from "../../componentes/formulario/formulario";
 import FormularioInscripcion from "../../componentes/formulario/formularioInscripcion";
 import { motion } from "framer-motion";
-import {Phone} from "lucide-react";
+import {Phone,User} from "lucide-react";
+
+
+import InfoCard from "../../componentes/consultas/card.jsx"
 
 export default function InformacionSocios() {
   const [activo, setActivo] = useState(null);
@@ -21,22 +24,26 @@ export default function InformacionSocios() {
 
   return (
     <section className="w-full bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 md:pt-24  ">
+      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-30 ">
         <div className="max-w-6xl mx-auto px-6 pb-20">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-14"
+            className="text-center mb-10"
           >
-            <h2 className="text-5xl font-extrabold text-white font-[Lato]">
+            <h2 className="text-4xl md:text-5xl pb-2 font-extrabold text-white ">
               CONSULTAS / INFORMACION
             </h2>
             <p className="text-white mt-3 font-[Inter]">
               Sumate al club y disfrutá de beneficios exclusivos
             </p>
           </motion.div>
+
+
+
+
 
           {/* CARDS */}
           <motion.div
@@ -52,6 +59,7 @@ export default function InformacionSocios() {
             }}
             className="grid md:grid-cols-3 gap-8"
           >
+              
             {/* Beneficios */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -59,17 +67,25 @@ export default function InformacionSocios() {
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.4 }}
               onClick={() => handleClick("beneficios")}
-              className="cursor-pointer bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-              <Gift className="text-[#c80000] mb-3" />
 
-              <h3 className="text-xl font-bold mb-4 text-[#c80000] font-[Lato]">
+              <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
+                <Gift size={30}/>
+              </div>
+              
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 Beneficios
               </h3>
 
-              <p className="text-gray-600">
+              <p className="text-gray-500 leading-relaxed">
                 Conocé todos los beneficios exclusivos para socios del club.
               </p>
+
+              <div className="mt-4 text-red-600 font-medium opacity-0 group-hover:opacity-100 transition">
+                Ver más →
+              </div>
             </motion.div>
 
             {/* Asociarte */}
@@ -79,17 +95,27 @@ export default function InformacionSocios() {
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.4 }}
               onClick={() => handleClick("asociarte")}
-              className="cursor-pointer bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-              <Users className="text-[#c80000] mb-3" />
-              <h3 className="text-xl font-bold mb-4 text-[#c80000] font-[Lato]">
-                ¿Cómo asociarte?
+
+              <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
+                <Users size={30}/>
+              </div>
+              
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                 ¿Cómo asociarte?
               </h3>
 
-              <p className="text-gray-600">
+              <p className="text-gray-500 leading-relaxed">
                 Pasos simples para formar parte del club.
               </p>
+
+              <div className="mt-4 text-red-600 font-medium opacity-0 group-hover:opacity-100 transition">
+                Ver más →
+              </div>
             </motion.div>
+            
 
             {/* Cuotas */}
             <motion.div
@@ -97,18 +123,28 @@ export default function InformacionSocios() {
               animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.4 }}
-              onClick={() => handleClick("cuotas")}
-              className="cursor-pointer bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
+               onClick={() => handleClick("cuotas")}
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-              <CreditCard className="text-[#c80000] mb-3" />
-              <h3 className="text-xl font-bold mb-4 text-[#c80000] font-[Lato]">
-                Pago de Cuota
+
+              <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
+                <CreditCard size={30}/>
+              </div>
+              
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                 Pago de Cuota
               </h3>
 
-              <p className="text-gray-600">
+              <p className="text-gray-500 leading-relaxed">
                 Formas disponibles para abonar tu cuota mensual.
               </p>
+
+              <div className="mt-4 text-red-600 font-medium opacity-0 group-hover:opacity-100 transition">
+                Ver más →
+              </div>
             </motion.div>
+
           </motion.div>
         </div>
 
@@ -192,9 +228,10 @@ export default function InformacionSocios() {
                   </div>
 
                   <p className="text-gray-700">
-                    Para asociarte al club, podés elegir entre estas dos
-                    opciones:
+                    Para asociarte al club, podés elegir entre estas dos opciones, según lo que te resulte más cómodo:
                   </p>
+               
+                 
 
                   <div className="grid md:grid-cols-2 gap-10">
                     {/* PRESENCIAL */}

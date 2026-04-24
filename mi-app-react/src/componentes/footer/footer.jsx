@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
  return (
-  <footer className="bg-black text-white pt-10 pb-6 px-6 border-t border-zinc-800">
+  <footer className="bg-black text-white pt-10 pb-6  border-t border-zinc-800">
     <div className="w-full mx-auto flex flex-col md:flex-row justify-between gap-10 px-10">
   
   {/* IZQUIERDA */}
@@ -73,14 +73,6 @@ const Footer = () => {
         © {new Date().getFullYear()} CLUB CEOS — Todos los derechos reservados.
       </p>
 
-      {/* <div className="flex gap-6">
-        <a href="#" className="hover:text-white transition-colors">
-          Política de Privacidad
-        </a>
-        <a href="#" className="hover:text-white transition-colors">
-          Términos y Condiciones
-        </a>
-      </div> */}
     </div>
   </footer>
 );
