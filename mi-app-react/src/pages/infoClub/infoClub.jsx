@@ -354,7 +354,7 @@ export default function InfoClub() {
           </div>
 
           {/* Lado derecho: Imagen */}
-          <div className="flex-1 relative h-[250px] sm:h-[300px] md:h-[420px]">
+          <div className="h-[400px] w-[400px] md:h-[700px] md:w-[600px]">
             <GaleriaFotos imagenes={imagenesPredio} />
           </div>
         </section>

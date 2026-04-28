@@ -346,7 +346,7 @@ export default function Deportes() {
                 </div>
 
                 {/* DERECHA */}
-                <div className="h-full flex">
+                <div className="h-[440px] w-[300px]">
                   <GaleriaFotos imagenes={imagenesHockey} />
                 </div>
               </div>
