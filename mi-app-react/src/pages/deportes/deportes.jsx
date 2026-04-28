@@ -34,8 +34,7 @@ import galeriaH5 from "../../assets/img/deportes/carrusel/hockey/5.jpg";
 
 const imagenesFutbol = [galeriaF1, galeriaF2, galeriaF3, galeriaF4, galeriaF5];
 const imagenesHockey = [galeriaH1, galeriaH2, galeriaH3, galeriaH4, galeriaH5];
-
-import GaleriaFotos from "../../componentes/deportes/carrusel";
+import DeporteInfo from "../../componentes/deportes/deporteInfo";
 
 export default function Deportes() {
   const [activo, setActivo] = useState(null);
@@ -197,326 +196,33 @@ export default function Deportes() {
           </motion.div>
         </div>
       </main>
-      {/* INFO HOCKEY*/}
       {activo === "hockey" && (
-        <motion.div
-          ref={infoRef}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-full bg-gray-50 py-10"
-        >
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            {/* IMAGEN */}
-            <div className="relative flex justify-center items-center">
-              <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
-                <motion.img
-                  src={hockey}
-                  className="w-full h-full object-cover rounded-full"
-                  whileHover={{ scale: 1.05 }}
-                />
-              </div>
-            </div>
-
-            {/* TEXTO */}
-            <div className="max-w-xl text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-                HOCKEY DEL CLUB
-              </h2>
-
-              <p className="text-gray-600 mb-8">
-                Formación deportiva desde edades tempranas hasta primera
-                división, fomentando el trabajo en equipo, la disciplina y la
-                competencia.
-              </p>
-
-              {/* FEATURES */}
-              <div className="flex flex-col sm:flex-row gap-6 mb-8 justify-center md:justify-start">
-                <div className="flex items-center gap-3">
-                  <div className="bg-red-500 p-3 rounded-full text-white">
-                    <Trophy size={18} />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-sm">Categorías</p>
-                    <p className="text-gray-500 text-sm">
-                      SUB 12 · SUB 14 · SUB 18 · Primera
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="bg-red-500 p-3 rounded-full text-white">
-                    <MapPin size={18} />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-sm">Ubicación</p>
-                    <p className="text-gray-500 text-sm">
-                      {" "}
-                      Cancha Municipal - Junín de los Andes
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="flex justify-center">
-              <div className="w-100 h-[2px] bg-gray-300 my-10 rounded-full"></div>
-            </div>
-
-            <div className="w-full bg-gray-50 py-10 px-6 md:px-20 font-[Inter]">
-              <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
-                {/* IZQUIERDA */}
-                <div className="md:col-span-2 space-y-12">
-                  <div className="space-y-4">
-                    {dataHockey.map((item, i) => (
-                      <div key={i} className="w-full max-w-4xl mx-auto">
-                        {/* Card */}
-                        <div
-                          onClick={() => toggle(i)}
-                          className="cursor-pointer bg-white border border-gray-200 rounded-xl shadow-md p-5 flex items-center justify-between hover:shadow-lg transition-all"
-                        >
-                          <div>
-                            <h2 className="text-xl font-bold font-['Lato'] text-gray-900">
-                              {item.cat}
-                            </h2>
-                            <p className="text-sm text-gray-500 font-['Inter']">
-                              Click para ver más información
-                            </p>
-                          </div>
-
-                          <span
-                            className={`transition-transform ${
-                              openIndex === i ? "rotate-180" : ""
-                            }`}
-                          >
-                            ▼
-                          </span>
-                        </div>
-
-                        {/* Contenido */}
-                        <div
-                          className={`overflow-hidden transition-all duration-500 ${
-                            openIndex === i ? "max-h-[500px] mt-4" : "max-h-0"
-                          }`}
-                        >
-                          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-                            <p className="text-gray-600 mb-2">
-                              <span className="font-semibold">Edades:</span>{" "}
-                              {item.edad}
-                            </p>
-
-                            <p className="text-gray-600 mb-4">
-                              <span className="font-semibold">Profesores:</span>{" "}
-                              {item.profe}
-                            </p>
-                            <p className="text-gray-600 mb-4">
-                              <span className="font-semibold">
-                                Dias de entrenamiento:
-                              </span>{" "}
-                              {item.dias}
-                            </p>
-                            <div className="flex flex-col md:flex-row justify-start md:gap-5">
-                              <p className="text-gray-600 mb-4">
-                                <span className="font-semibold">Horario:</span>{" "}
-                                {item.horario}
-                              </p>
-                              <p className="text-gray-600 mb-4">
-                                <span className="font-semibold">
-                                  Ubicacion:
-                                </span>{" "}
-                                {item.lugar}
-                              </p>
-                            </div>
-
-                            <div className="flex gap-4">
-                              {item.imgs.map((img, idx) => (
-                                <img
-                                  key={idx}
-                                  src={img}
-                                  className="w-1/2 h-40 object-cover rounded-lg"
-                                />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* DERECHA */}
-                <div className="h-[440px] w-[300px]">
-                  <GaleriaFotos imagenes={imagenesHockey} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <DeporteInfo
+          titulo="HOCKEY DEL CLUB"
+          descripcion="Formación deportiva desde edades tempranas hasta primera división..."
+          imagen={hockey}
+          categorias="SUB 12 · SUB 14 · SUB 18 · Primera"
+          ubicacion="Cancha Municipal - Junín de los Andes"
+          data={dataHockey}
+          imagenesGaleria={imagenesHockey}
+          openIndex={openIndex}
+          toggle={toggle}
+        />
       )}
 
-      {/* FUTBOL */}
       {activo === "futbol" && (
-        <motion.div
-          ref={infoRef}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-full bg-gray-50 py-10"
-        >
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12">
-            {/* IMAGEN */}
-            <div className="relative flex justify-center items-center">
-              <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
-                <motion.img
-                  src={futbol}
-                  className="w-full h-full object-cover rounded-full"
-                  whileHover={{ scale: 1.05 }}
-                />
-              </div>
-            </div>
-
-            {/* TEXTO */}
-            <div className="max-w-xl text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-                FÚTBOL DEL CLUB
-              </h2>
-
-              <p className="text-gray-600 mb-8">
-                Formación y competencia para todas las edades, promoviendo el
-                desarrollo deportivo, el compromiso y el trabajo en equipo.
-              </p>
-
-              {/* FEATURES */}
-              <div className="flex flex-col sm:flex-row gap-6 mb-8 justify-center md:justify-start">
-                <div className="flex items-center gap-3">
-                  <div className="bg-red-500 p-3 rounded-full text-white">
-                    <Trophy size={18} />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-gray-900 font-semibold text-sm">
-                      Categorías
-                    </p>
-                    <p className="text-gray-500 text-sm">
-                      9na · 8va · 5ta · Primera
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="bg-red-500 p-3 rounded-full text-white">
-                    <MapPin size={18} />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-gray-900 font-semibold text-sm">
-                      Ubicación
-                    </p>
-                    <p className="text-gray-500 text-sm">
-                      Predio Ceos - Junín de los Andes
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="flex justify-center">
-              <div className="w-100 h-[2px] bg-gray-300 my-10 rounded-full"></div>
-            </div>
-
-            <div className="w-full bg-gray-50 py-10 px-6 md:px-20 font-[Inter]">
-              <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
-                <div className="h-110 flex">
-                   
-                  <GaleriaFotos imagenes={imagenesFutbol} />
-                </div>
-                {/* IZQUIERDA */}
-                <div className="md:col-span-2 space-y-12">
-                  <div className="space-y-4">
-                    {dataFutbol.map((item, i) => (
-                      <div key={i} className="w-full max-w-4xl mx-auto">
-                        {/* Card */}
-                        <div
-                          onClick={() => toggle(i)}
-                          className="cursor-pointer bg-white border border-gray-200 rounded-xl shadow-md p-5 flex items-center justify-between hover:shadow-lg transition-all"
-                        >
-                          <div>
-                            <h2 className="text-xl font-bold font-['Lato'] text-gray-900">
-                              {item.cat}
-                            </h2>
-                            <p className="text-sm text-gray-500 font-['Inter']">
-                              Click para ver más información
-                            </p>
-                          </div>
-
-                          <span
-                            className={`transition-transform ${
-                              openIndex === i ? "rotate-180" : ""
-                            }`}
-                          >
-                            ▼
-                          </span>
-                        </div>
-
-                        {/* Contenido */}
-                        <div
-                          className={`overflow-hidden transition-all duration-500 ${
-                            openIndex === i ? "max-h-[500px] mt-4" : "max-h-0"
-                          }`}
-                        >
-                          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-                            <p className="text-gray-600 mb-2">
-                              <span className="font-semibold">Edades:</span>{" "}
-                              {item.edad}
-                            </p>
-
-                            <p className="text-gray-600 mb-4">
-                              <span className="font-semibold">Profesores:</span>{" "}
-                              {item.profe}
-                            </p>
-
-                            <p className="text-gray-600 mb-4">
-                              <span className="font-semibold">
-                                Dias de entrenamiento:
-                              </span>{" "}
-                              {item.dias}
-                            </p>
-                            <div className="flex flex-col md:flex-row justify-start md:gap-5">
-                              <p className="text-gray-600 mb-4">
-                                <span className="font-semibold">Horario:</span>{" "}
-                                {item.horario}
-                              </p>
-                              <p className="text-gray-600 mb-4">
-                                <span className="font-semibold">
-                                  Ubicacion:
-                                </span>{" "}
-                                {item.lugar}
-                              </p>
-                            </div>
-
-                            <div className="flex gap-4">
-                              {item.imgs.map((img, idx) => (
-                                <img
-                                  key={idx}
-                                  src={img}
-                                  className="w-1/2 h-40 object-cover rounded-lg"
-                                />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                
-
-                {/* DERECHA */}
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <DeporteInfo
+          titulo="FÚTBOL DEL CLUB"
+          descripcion="Formación y competencia para todas las edades..."
+          imagen={futbol}
+          categorias="9na · 8va · 5ta · Primera"
+          ubicacion="Predio Ceos - Junín de los Andes"
+          data={dataFutbol}
+          imagenesGaleria={imagenesFutbol}
+          reverse
+          openIndex={openIndex}
+          toggle={toggle}
+        />
       )}
     </section>
   );

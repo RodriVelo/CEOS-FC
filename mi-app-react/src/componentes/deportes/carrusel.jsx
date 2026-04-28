@@ -11,14 +11,14 @@ export default function GaleriaFotos({imagenes}) {
       setTimeout(() => {
         setActual((prev) => (prev + 1) % imagenes.length)
         setAnimando(false)
-      }, 400)
-    }, 2000)
+      }, 300)
+    }, 1000)
 
     return () => clearInterval(intervalo)
   }, [])
 
  return (
-  <div className="relative overflow-hidden bg-black w-full h-full">
+  <div className="relative overflow-hidden bg-white w-full h-full">
       <img
         key={actual}
         src={imagenes[actual]}
