@@ -29,7 +29,7 @@ import fotoHockey1 from "../../assets/img/infoClub/hockey1.jpg";
 
 import fotoEscudo from "../../assets/img/home/CEOS.png";
 import fotoLogo from "../../assets/img/LOGO.png";
-import GaleriaFotos from "../../componentes/deportes/carrusel.jsx"
+import GaleriaFotos from "../../componentes/deportes/carrusel"
 
 import fotoPredio1 from "../../assets/img/infoClub/predio/1.jpg";
 import fotoPredio2 from "../../assets/img/infoClub/predio/2.jpg";
