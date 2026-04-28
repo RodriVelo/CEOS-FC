@@ -31,12 +31,12 @@ import fotoLogo from "../../assets/img/LOGO.png";
 import GaleriaFotos from "../../componentes/deportes/carrusel"
 
 import fotoPredio1 from "../../assets/img/infoClub/predio/1.jpg";
-import fotoPredio5 from "../../assets/img/infoClub/predio/2.jpg";
+import fotoPredio2 from "../../assets/img/infoClub/predio/2.jpg";
 import fotoPredio3 from "../../assets/img/infoClub/predio/3.jpg";
 import fotoPredio4 from "../../assets/img/infoClub/predio/4.jpg";
 
 const images = [fotoFutbol1, fotoHockey1];
-const imagenesPredio = [fotoPredio1, fotoPredio5, fotoPredio3, fotoPredio4];
+const imagenesPredio = [fotoPredio1, fotoPredio2, fotoPredio3, fotoPredio4];
 
 export default function InfoClub() {
   const fadeUp = {
