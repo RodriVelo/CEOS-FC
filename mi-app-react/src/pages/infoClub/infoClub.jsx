@@ -26,11 +26,18 @@ import { motion } from "framer-motion";
 // Imports de imágenes
 import fotoFutbol1 from "../../assets/img/infoClub/futbol1.jpg";
 import fotoHockey1 from "../../assets/img/infoClub/hockey1.jpg";
-import fotoPredio from "../../assets/img/infoClub/predio.jpg";
+
 import fotoEscudo from "../../assets/img/home/CEOS.png";
 import fotoLogo from "../../assets/img/LOGO.png";
+import GaleriaFotos from "../../componentes/deportes/carrusel.jsx"
+
+import fotoPredio1 from "../../assets/img/infoClub/predio/1.jpg";
+import fotoPredio2 from "../../assets/img/infoClub/predio/2.jpg";
+import fotoPredio3 from "../../assets/img/infoClub/predio/3.jpg";
+import fotoPredio4 from "../../assets/img/infoClub/predio/4.jpg";
 
 const images = [fotoFutbol1, fotoHockey1];
+const imagenesPredio = [fotoPredio1, fotoPredio2, fotoPredio3, fotoPredio4];
 
 export default function InfoClub() {
   const fadeUp = {
@@ -314,7 +321,7 @@ export default function InfoClub() {
         </div>
 
         {/* SECCIÓN PREDIO */}
-        <section className="w-full flex flex-col lg:flex-row overflow-hidden bg-[#ffc800]">
+        <section className="w-full flex flex-col lg:flex-row overflow-hidden bg-[#ffc800] min-h-[420px]">
           {/* Lado izquierdo: Info y Mapa */}
           <div className="flex-1 flex items-center justify-center py-16 px-6 md:px-12">
             <div className="max-w-xl w-full">
@@ -348,12 +355,8 @@ export default function InfoClub() {
           </div>
 
           {/* Lado derecho: Imagen */}
-          <div className="flex-1 min-h-[350px] md:min-h-[500px] lg:min-h-full relative">
-            <img
-              src={fotoPredio}
-              alt="Instalaciones del Predio"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+          <div className="flex-1 relative h-[250px] sm:h-[300px] md:h-[420px]">
+            <GaleriaFotos imagenes={imagenesPredio} />
           </div>
         </section>
 

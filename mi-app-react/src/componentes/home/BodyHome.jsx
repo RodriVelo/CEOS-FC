@@ -191,14 +191,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col lg:flex-row justify-center lg:justify-start bg-white py-5 gap-10 items-center overflow-hidden">
+      <div className="w-[100 px] h-[2px] bg-gray-300 rounded-full "></div>
+
+      <section className="flex flex-col lg:flex-row justify-center lg:justify-start bg-gray-100 py-16 md:py-20 gap-10 items-center overflow-hidden">
         {/* Barra lateral: se oculta en móviles para no romper el flujo, o puedes dejarla */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="hidden lg:block bg-gradient-to-b from-[#c80000] to-black w-[60px] h-80"
+          className="hidden lg:block bg-gradient-to-b from-[#c80000] to-black w-[95px] h-80"
         ></motion.div>
 
         <motion.div
@@ -217,10 +219,10 @@ export default function Home() {
             grande.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center py-10 gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center py-5 gap-8">
             {/* Stat 1 */}
             <div className="flex items-center gap-2">
-              <h3 className="text-5xl md:text-5xl text-gray-900 font-extrabold">
+              <h3 className="text-5xl md:text-5xl text-[#c80000] font-extrabold">
                 <Counter to={200} prefix="+" />
               </h3>
               <p className="text-black text-left leading-tight text-sm md:text-base">
@@ -233,7 +235,7 @@ export default function Home() {
 
             {/* Stat 2 */}
             <div className="flex items-center gap-2">
-              <h3 className="text-6xl md:text-5xl text-gray-900 font-extrabold">
+              <h3 className="text-6xl md:text-5xl text-[#c80000] font-extrabold">
                 <Counter to={400} prefix="+" />
               </h3>
               <p className="text-black text-sm md:text-base">Socios/as</p>
@@ -251,12 +253,12 @@ export default function Home() {
           <motion.img
             whileHover={{ scale: 1.05 }}
             src={fotoHockey2}
-            className="w-full max-w-[350px] h-[200px] md:max-w-[400px] lg:w-[460px] lg:h-[180px] object-cover lg:pl-15 pl-10   shadow-md lg:shadow-none"
+            className="w-full max-w-[350px] h-[200px] md:max-w-[400px] lg:w-[460px] lg:h-[180px] object-cover lg:pl-15 pl-10 lg:shadow-none"
           />
           <motion.img
             whileHover={{ scale: 1.05 }}
             src={fotoFutbol2}
-            className="w-full max-w-[350px] h-[200px] md:max-w-[400px] lg:w-[460px] lg:h-[180px] object-cover lg:pr-15 pr-10 shadow-md lg:shadow-none"
+            className="w-full max-w-[350px] h-[200px] md:max-w-[400px] lg:w-[460px] lg:h-[180px] object-cover lg:pr-15 pr-10 lg:shadow-none"
           />
         </motion.div>
       </section>

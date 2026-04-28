@@ -20,6 +20,23 @@ import foto182 from "../../assets/img/deportes/sub182.jpg";
 import foto1raH1 from "../../assets/img/deportes/primeraH1.jpg";
 import foto1raH2 from "../../assets/img/deportes/primeraH2.jpg";
 
+import galeriaF1 from "../../assets/img/deportes/carrusel/futbol/1.jpg";
+import galeriaF2 from "../../assets/img/deportes/carrusel/futbol/2.jpg";
+import galeriaF3 from "../../assets/img/deportes/carrusel/futbol/3.jpg";
+import galeriaF4 from "../../assets/img/deportes/carrusel/futbol/4.jpg";
+import galeriaF5 from "../../assets/img/deportes/carrusel/futbol/5.jpg";
+
+import galeriaH1 from "../../assets/img/deportes/carrusel/hockey/1.jpg";
+import galeriaH2 from "../../assets/img/deportes/carrusel/hockey/2.jpg";
+import galeriaH3 from "../../assets/img/deportes/carrusel/hockey/3.jpg";
+import galeriaH4 from "../../assets/img/deportes/carrusel/hockey/4.jpg";
+import galeriaH5 from "../../assets/img/deportes/carrusel/hockey/5.jpg";
+
+const imagenesFutbol = [galeriaF1, galeriaF2, galeriaF3, galeriaF4, galeriaF5];
+const imagenesHockey = [galeriaH1, galeriaH2, galeriaH3, galeriaH4, galeriaH5];
+
+import GaleriaFotos from "../../componentes/deportes/carrusel";
+
 export default function Deportes() {
   const [activo, setActivo] = useState(null);
   const infoRef = useRef(null);
@@ -47,24 +64,36 @@ export default function Deportes() {
       edad: "2018 / 2019 / 2020",
       profe: "Raul Paiz, Leo Guenchullan",
       imgs: [foto9na1, foto9na2],
+      dias: "Lunes, Miercoles y Viernes",
+      horario: "20:00 hs-21:00 hs",
+      lugar: "Predio Ceos",
     },
     {
       cat: "8va Division",
       edad: "2016 / 2017",
       profe: "Raul Paiz, Leo Guenchullan",
       imgs: [foto8va1, foto8va2],
+      dias: "Lunes, Miercoles y Viernes",
+      horario: "20:00 hs-21:00 hs",
+      lugar: "Predio Ceos",
     },
     {
       cat: "5ta Division",
       edad: "2010",
       profe: "Leo Kreitman",
       imgs: [foto5ta1, foto5ta2],
+      dias: "Lunes, Miercoles y Viernes",
+      horario: "18:00 hs-20:00 hs",
+      lugar: "Predio Ceos",
     },
     {
       cat: "PRIMERA DIVISION",
       edad: "Mayores",
       profe: "Lihuen Sibon",
       imgs: [foto1ra1, foto1ra2],
+      dias: "Lunes, Miercoles y Viernes",
+      horario: "20:00 hs -21:00 hs",
+      lugar: "Cancha Municipal de Hockey",
     },
   ];
 
@@ -74,24 +103,36 @@ export default function Deportes() {
       edad: "2018 / 2019 / 2020",
       profe: "Fernando Vallejos, Lucila Solorza",
       imgs: [foto141, foto142],
+      dias: "Lunes, Miercoles y Viernes",
+      horario: "19:00 hs -21:00 hs",
+      lugar: "Cancha Municipal de Hockey",
     },
     {
       cat: "SUB 16",
       edad: "2016 / 2017",
       profe: "Fernando Vallejos, Lucila Solorza",
       imgs: [foto161, foto162],
+      dias: "Lunes, Miercoles y Viernes",
+      horario: "20:00 hs -21:00 hs",
+      lugar: "Cancha Municipal de Hockey",
     },
     {
       cat: "SUB 18",
       edad: "2010",
       profe: "Fernando Aminahuel, Juan Pipe Rocha",
       imgs: [foto181, foto182],
+      dias: "Miercoles y Viernes",
+      horario: "20:00 hs -21:00 hs",
+      lugar: "Cancha Municipal de Hockey",
     },
     {
       cat: "PRIMERA DIVISION",
       edad: "Mayores",
       profe: "Fernando Aminahuel, Juan Pipe Rocha",
       imgs: [foto1raH1, foto1raH2],
+      dias: "Miercoles y Viernes",
+      horario: "20:00 hs -21:00 hs",
+      lugar: "Cancha Municipal de Hockey",
     },
   ];
 
@@ -103,8 +144,6 @@ export default function Deportes() {
     <section id="deportes" className="bg-white">
       <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-30">
         {/* TITULO */}
-
-       
 
         <motion.div
           variants={fadeUp}
@@ -165,7 +204,7 @@ export default function Deportes() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full bg-gray-50 py-16"
+          className="w-full bg-gray-50 py-10"
         >
           <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
             {/* IMAGEN */}
@@ -222,7 +261,7 @@ export default function Deportes() {
           </div>
           <div>
             <div className="flex justify-center">
-              <div className="w-100 h-[2px] bg-gray-300 rounded-full"></div>
+              <div className="w-100 h-[2px] bg-gray-300 my-10 rounded-full"></div>
             </div>
 
             <div className="w-full bg-gray-50 py-10 px-6 md:px-20 font-[Inter]">
@@ -271,6 +310,24 @@ export default function Deportes() {
                               <span className="font-semibold">Profesores:</span>{" "}
                               {item.profe}
                             </p>
+                            <p className="text-gray-600 mb-4">
+                              <span className="font-semibold">
+                                Dias de entrenamiento:
+                              </span>{" "}
+                              {item.dias}
+                            </p>
+                            <div className="flex flex-col md:flex-row justify-start md:gap-5">
+                              <p className="text-gray-600 mb-4">
+                                <span className="font-semibold">Horario:</span>{" "}
+                                {item.horario}
+                              </p>
+                              <p className="text-gray-600 mb-4">
+                                <span className="font-semibold">
+                                  Ubicacion:
+                                </span>{" "}
+                                {item.lugar}
+                              </p>
+                            </div>
 
                             <div className="flex gap-4">
                               {item.imgs.map((img, idx) => (
@@ -289,29 +346,8 @@ export default function Deportes() {
                 </div>
 
                 {/* DERECHA */}
-                <div className="bg-white rounded-xl shadow-md p-8 space-y-6 border border-gray-200 h-fit">
-                  <h2 className="text-2xl font-[Lato] font-extrabold text-gray-900">
-                    Días de Entrenamiento
-                  </h2>
-
-                  <ul className="text-gray-600 text-sm space-y-3">
-                    <li className="flex justify-between border-b pb-2">
-                      <span>Inferiores</span>
-                      <span className="font-medium text-gray-800">
-                        Lun - Mié
-                      </span>
-                    </li>
-                    <li className="flex justify-between border-b pb-2">
-                      <span>Juveniles</span>
-                      <span className="font-medium text-gray-800">
-                        Mar - Jue
-                      </span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Primera</span>
-                      <span className="font-medium text-gray-800">Vie</span>
-                    </li>
-                  </ul>
+                <div className="h-full flex">
+                  <GaleriaFotos imagenes={imagenesHockey} />
                 </div>
               </div>
             </div>
@@ -326,9 +362,9 @@ export default function Deportes() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full bg-gray-50"
+          className="w-full bg-gray-50 py-10"
         >
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12 py-10">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12">
             {/* IMAGEN */}
             <div className="relative flex justify-center items-center">
               <div className="w-72 h-72 md:w-96 md:h-96  flex items-center justify-center">
@@ -385,11 +421,15 @@ export default function Deportes() {
           </div>
           <div>
             <div className="flex justify-center">
-              <div className="w-100 h-[2px] bg-gray-300 rounded-full"></div>
+              <div className="w-100 h-[2px] bg-gray-300 my-10 rounded-full"></div>
             </div>
 
             <div className="w-full bg-gray-50 py-10 px-6 md:px-20 font-[Inter]">
               <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+                <div className="h-110 flex">
+                   
+                  <GaleriaFotos imagenes={imagenesFutbol} />
+                </div>
                 {/* IZQUIERDA */}
                 <div className="md:col-span-2 space-y-12">
                   <div className="space-y-4">
@@ -435,6 +475,25 @@ export default function Deportes() {
                               {item.profe}
                             </p>
 
+                            <p className="text-gray-600 mb-4">
+                              <span className="font-semibold">
+                                Dias de entrenamiento:
+                              </span>{" "}
+                              {item.dias}
+                            </p>
+                            <div className="flex flex-col md:flex-row justify-start md:gap-5">
+                              <p className="text-gray-600 mb-4">
+                                <span className="font-semibold">Horario:</span>{" "}
+                                {item.horario}
+                              </p>
+                              <p className="text-gray-600 mb-4">
+                                <span className="font-semibold">
+                                  Ubicacion:
+                                </span>{" "}
+                                {item.lugar}
+                              </p>
+                            </div>
+
                             <div className="flex gap-4">
                               {item.imgs.map((img, idx) => (
                                 <img
@@ -451,31 +510,9 @@ export default function Deportes() {
                   </div>
                 </div>
 
-                {/* DERECHA */}
-                <div className="bg-white rounded-xl shadow-md p-8 space-y-6 border border-gray-200 h-fit">
-                  <h2 className="text-2xl font-[Lato] font-extrabold text-gray-900">
-                    Días de Entrenamiento
-                  </h2>
+                
 
-                  <ul className="text-gray-600 text-sm space-y-3">
-                    <li className="flex justify-between border-b pb-2">
-                      <span>Inferiores</span>
-                      <span className="font-medium text-gray-800">
-                        Lun - Mié
-                      </span>
-                    </li>
-                    <li className="flex justify-between border-b pb-2">
-                      <span>Juveniles</span>
-                      <span className="font-medium text-gray-800">
-                        Mar - Jue
-                      </span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Primera</span>
-                      <span className="font-medium text-gray-800">Vie</span>
-                    </li>
-                  </ul>
-                </div>
+                {/* DERECHA */}
               </div>
             </div>
           </div>
