@@ -21,7 +21,6 @@ import {
   Medal,
   Star,
 } from "lucide-react";
-
 import { motion } from "framer-motion";
 // Imports de imágenes
 import fotoFutbol1 from "../../assets/img/infoClub/futbol1.jpg";
