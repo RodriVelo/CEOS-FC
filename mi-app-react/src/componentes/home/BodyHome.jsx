@@ -191,7 +191,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-[100 px] h-[2px] bg-gray-300 rounded-full "></div>
+      <div className="bg-gray-100 flex justify-center">
+        <div className="w-48 md:w-100 h-[2px] bg-gray-300 rounded-full"></div>
+      </div>
 
       <section className="flex flex-col lg:flex-row justify-center lg:justify-start bg-gray-100 py-16 md:py-20 gap-10 items-center overflow-hidden">
         {/* Barra lateral: se oculta en móviles para no romper el flujo, o puedes dejarla */}

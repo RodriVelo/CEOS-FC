@@ -53,28 +53,28 @@ export default function InfoClub() {
       icono: Crown,
     },
     {
-      titulo: "Vicepresidente",
-      nombre: "Micho",
-      descripcion: "Apoya al presidente y lo reemplaza cuando no está.",
+      titulo: "Secretario",
+      nombre: "Silvina Vega",
+      descripcion: "Gestiona la parte administrativa, redacta actas y organiza las reuniones.",
       icono: UserCheck,
     },
     {
-      titulo: "Secretario",
-      nombre: "Tito",
-      descripcion:
-        "Se encarga de la parte administrativa (actas, reuniones, documentación).",
-      icono: FileText,
-    },
-    {
       titulo: "Tesorero",
-      nombre: "Messi dea",
-      descripcion: "Maneja las finanzas (ingresos, egresos, balances).",
+      nombre: "Triana Lavados",
+      descripcion:
+        "Administra el dinero, controla ingresos y egresos y presenta balances.",
       icono: Wallet,
     },
     {
-      titulo: "Vocal",
-      nombre: "Marcelo Barroso (El mellizo)",
-      descripcion: "Miembros que participan en decisiones y votaciones.",
+      titulo: "Vocal titular",
+      nombre: "Giselle Pico",
+      descripcion: "Participa con voz y voto en las decisiones y colabora en tareas de la comisión.",
+      icono: User,
+    },
+    {
+      titulo: "Vocal suplente",
+      nombre: "Vacante",
+      descripcion: "Reemplaza a un vocal titular cuando falta y apoya en actividades del club.",
       icono: User,
     },
   ];

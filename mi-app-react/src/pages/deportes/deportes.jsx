@@ -52,7 +52,7 @@ export default function Deportes() {
       infoRef.current?.scrollIntoView({
         behavior: "smooth",
       });
-    }, 100);
+    }, 150);
   };
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -197,6 +197,7 @@ export default function Deportes() {
         </div>
       </main>
       {activo === "hockey" && (
+         <div ref={infoRef}>
         <DeporteInfo
           titulo="HOCKEY DEL CLUB"
           descripcion="Formación deportiva desde edades tempranas hasta primera división..."
@@ -204,13 +205,16 @@ export default function Deportes() {
           categorias="SUB 12 · SUB 14 · SUB 18 · Primera"
           ubicacion="Cancha Municipal - Junín de los Andes"
           data={dataHockey}
+          competencias={["Liga Cordillerana","Regional Neuquino"]}
           imagenesGaleria={imagenesHockey}
           openIndex={openIndex}
           toggle={toggle}
         />
-      )}
+      </div>
+    )}
 
       {activo === "futbol" && (
+         <div ref={infoRef}>
         <DeporteInfo
           titulo="FÚTBOL DEL CLUB"
           descripcion="Formación y competencia para todas las edades..."
@@ -219,11 +223,13 @@ export default function Deportes() {
           ubicacion="Predio Ceos - Junín de los Andes"
           data={dataFutbol}
           imagenesGaleria={imagenesFutbol}
+          competencias={["Lifue Sur","Torneo Local"]}
           reverse
           openIndex={openIndex}
           toggle={toggle}
         />
-      )}
+      </div>
+    )}
     </section>
   );
 }

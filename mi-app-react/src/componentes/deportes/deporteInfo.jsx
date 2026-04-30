@@ -17,6 +17,7 @@ export default function DeporteInfo({
   categorias,
   ubicacion,
   data,
+  competencias,
   imagenesGaleria,
   reverse = false,
   openIndex,
@@ -27,7 +28,7 @@ export default function DeporteInfo({
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="w-full bg-gray-50 py-10"
+      className="w-full bg-gray-50 pt-10"
     >
       {/* HEADER */}
       <div
@@ -80,7 +81,7 @@ export default function DeporteInfo({
 
       {/* LINEA */}
       <div className="flex justify-center">
-        <div className="w-100 h-[2px] bg-gray-300 my-10 rounded-full"></div>
+        <div className="w-48 md:w-100 h-[2px] bg-gray-300 my-10 rounded-full"></div>
       </div>
 
       {/* CONTENIDO */}
@@ -88,18 +89,26 @@ export default function DeporteInfo({
       <div className="w-full bg-gray-50/50 p-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-2 ">
           {/* GALERIA - Se recomienda un aspect-ratio fijo para mayor orden */}
-          <div className="w-full md:w-[300px] flex-shrink-0">
-            <div className="sticky top-4 h-[440px] w-full rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+           <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }} className="w-full md:w-[300px] flex-shrink-0">
+            <div className="sticky top-4 h-[400px]  md:h-[600px] w-full rounded-2xl overflow-hidden shadow-sm border border-gray-100">
               <GaleriaFotos imagenes={imagenesGaleria} />
             </div>
-          </div>
+          </motion.div>
 
           {/* INFO */}
-          <div className="flex-1 space-y-5">
+           <motion.div
+          initial={{ opacity: 0, x: 60}}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }} className="flex-1 space-y-5">
             {data.map((item, i) => (
               <div
                 key={i}
-                className="bg-white border-b border-gray-200 overflow-hidden transition-all duration-300 hover:border-gray-300"
+                className="bg-bg-gray-50/50 border-b border-gray-200 overflow-hidden transition-all duration-300 hover:border-gray-300"
               >
                 {/* HEADER DE LA CATEGORIA */}
                 <button
@@ -186,9 +195,36 @@ export default function DeporteInfo({
                 </div>
               </div>
             ))}
-          </div>
+            
+            <div className="bg-gray-50/50 py-3 flex flex-col items-center justify-center md:flex-row md:items-center gap-6">
+        {/* Título izquierda */}
+        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight text-center md:text-right">
+          COMPETENCIAS <br /> ACTUALES
+        </h1>
+
+        {/* Divisor vertical */}
+        <span className="hidden md:block text-[#c80000] text-7xl leading-none select-none">
+          |
+        </span>
+
+        {/* Lista de competencias */}
+        <div className="flex flex-col items-center md:items-start gap-1">
+          {competencias.map((item, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c80000] flex-shrink-0" />
+              <span className="text-gray-800 text-xl font-medium whitespace-nowrap">
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
+          </motion.div>
+        </div>
+      </div>
+
+      
+      
     </motion.div>
   );
 }

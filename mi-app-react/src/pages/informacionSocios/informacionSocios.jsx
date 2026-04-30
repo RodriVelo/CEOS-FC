@@ -3,10 +3,9 @@ import { Users, CreditCard, Gift, Form } from "lucide-react";
 import Formulario from "../../componentes/formulario/formulario";
 import FormularioInscripcion from "../../componentes/formulario/formularioInscripcion";
 import { motion } from "framer-motion";
-import {Phone,User} from "lucide-react";
+import { Phone, User } from "lucide-react";
 
-
-import InfoCard from "../../componentes/consultas/card.jsx"
+import InfoCard from "../../componentes/consultas/card.jsx";
 
 export default function InformacionSocios() {
   const [activo, setActivo] = useState(null);
@@ -24,7 +23,7 @@ export default function InformacionSocios() {
 
   return (
     <section className="w-full bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-30 ">
+      <main className="w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25   md:pt-30 ">
         <div className="max-w-6xl mx-auto px-6 pb-20">
           {/* Header */}
           <motion.div
@@ -41,10 +40,6 @@ export default function InformacionSocios() {
             </p>
           </motion.div>
 
-
-
-
-
           {/* CARDS */}
           <motion.div
             initial="hidden"
@@ -59,7 +54,6 @@ export default function InformacionSocios() {
             }}
             className="grid md:grid-cols-3 gap-8"
           >
-              
             {/* Beneficios */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -69,11 +63,9 @@ export default function InformacionSocios() {
               onClick={() => handleClick("beneficios")}
               className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-
               <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
-                <Gift size={30}/>
+                <Gift size={30} />
               </div>
-              
 
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 Beneficios
@@ -97,14 +89,12 @@ export default function InformacionSocios() {
               onClick={() => handleClick("asociarte")}
               className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-
               <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
-                <Users size={30}/>
+                <Users size={30} />
               </div>
-              
 
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                 ¿Cómo asociarte?
+                ¿Cómo asociarte?
               </h3>
 
               <p className="text-gray-500 leading-relaxed">
@@ -115,7 +105,6 @@ export default function InformacionSocios() {
                 Ver más →
               </div>
             </motion.div>
-            
 
             {/* Cuotas */}
             <motion.div
@@ -123,17 +112,15 @@ export default function InformacionSocios() {
               animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.4 }}
-               onClick={() => handleClick("cuotas")}
+              onClick={() => handleClick("cuotas")}
               className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-
               <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
-                <CreditCard size={30}/>
+                <CreditCard size={30} />
               </div>
-              
 
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                 Pago de Cuota
+                Pago de Cuota
               </h3>
 
               <p className="text-gray-500 leading-relaxed">
@@ -144,7 +131,6 @@ export default function InformacionSocios() {
                 Ver más →
               </div>
             </motion.div>
-
           </motion.div>
         </div>
 
@@ -228,10 +214,9 @@ export default function InformacionSocios() {
                   </div>
 
                   <p className="text-gray-700">
-                    Para asociarte al club, podés elegir entre estas dos opciones, según lo que te resulte más cómodo:
+                    Para asociarte al club, podés elegir entre estas dos
+                    opciones, según lo que te resulte más cómodo:
                   </p>
-               
-                 
 
                   <div className="grid md:grid-cols-2 gap-10">
                     {/* PRESENCIAL */}
@@ -334,9 +319,9 @@ export default function InformacionSocios() {
                       <div className="pt-2 border-t border-gray-200">
                         <p className="text-sm text-gray-500">WhatsApp</p>
                         <p className="flex items-center gap-2 text-lg font-semibold text-gray-900 tracking-wide">
-                            <Phone className="w-5 h-5 text-[#c80000]" />
-                            +54 9 2972 405717
-                          </p>
+                          <Phone className="w-5 h-5 text-[#c80000]" />
+                          +54 9 2972 405717
+                        </p>
                       </div>
                     </div>
                     <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-4">
