@@ -27,7 +27,7 @@ import fotoFutbol1 from "../../assets/img/infoClub/futbol1.jpg";
 import fotoHockey1 from "../../assets/img/infoClub/hockey1.jpg";
 
 import fotoEscudo from "../../assets/img/CEOS.webp";
-import fotoLogo from "../../assets/img/LOGO.png";
+import fotoLogo from "../../assets/img/LOGO.webp";
 import GaleriaFotos from "../../componentes/deportes/carrusel"
 
 import fotoPredio1 from "../../assets/img/infoClub/predio/1.jpg";
