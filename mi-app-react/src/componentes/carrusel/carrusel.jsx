@@ -1,11 +1,12 @@
 import React from "react";
-import donia from "../../assets/img/carrusel/doña.png"
-import huemul from "../../assets/img/carrusel/huemul.png"
-import kiwi from "../../assets/img/carrusel/kiwi.png"
-import lourdes from "../../assets/img/carrusel/lourdes.png"
-import murrita from "../../assets/img/carrusel/murrita.png"
-import picuru from "../../assets/img/carrusel/picuru.png"
-import traumatologia from "../../assets/img/carrusel/traumatologia.png"
+import donia from "../../assets/img/carrusel/carrusel/donia.webp"
+import huemul from "../../assets/img/carrusel/carrusel/huemul.webp"
+import kiwi from "../../assets/img/carrusel/carrusel/kiwi.webp"
+import lourdes from "../../assets/img/carrusel/carrusel/lourdes.webp"
+import murrita from "../../assets/img/carrusel/carrusel/murrita.webp"
+import picuru from "../../assets/img/carrusel/carrusel/picuru.webp"
+import traumatologia from "../../assets/img/carrusel/carrusel/traumatologia.webp"
+
 
 export default function Carrusel() {
   const sponsors = [
