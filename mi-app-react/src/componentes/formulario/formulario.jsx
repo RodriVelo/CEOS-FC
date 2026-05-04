@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { User, Mail, Phone } from "lucide-react";
 import Toast from "../Toast";
+import { motion } from "framer-motion";
 
 export default function Formulario() {
   const form = useRef();
@@ -49,7 +50,12 @@ export default function Formulario() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-white to-[#E8E8E8] rounded-3xl p-6 md:p-8">
+     <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+             className="bg-gradient-to-b from-white to-[#E8E8E8] rounded-3xl p-6 md:p-8">
       
       <Toast show={toast.show} type={toast.type} message={toast.message} />
 
@@ -117,6 +123,6 @@ export default function Formulario() {
         </div>
 
       </form>
-    </div>
+    </motion.div>
   );
 }
