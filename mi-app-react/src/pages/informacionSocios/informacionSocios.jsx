@@ -4,7 +4,7 @@ import Formulario from "../../componentes/formulario/formulario";
 import FormularioInscripcion from "../../componentes/formulario/formularioInscripcion";
 import { motion } from "framer-motion";
 import { Phone, User } from "lucide-react";
-import FAQ from "../../componentes/infoSocios/faq.jsx";
+import FAQ from "../../componentes/infoSocios/Faq.jsx";
 
 import InfoCard from "../../componentes/consultas/card.jsx";
 
