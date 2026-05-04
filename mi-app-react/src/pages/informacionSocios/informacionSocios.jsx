@@ -4,6 +4,7 @@ import Formulario from "../../componentes/formulario/formulario";
 import FormularioInscripcion from "../../componentes/formulario/formularioInscripcion";
 import { motion } from "framer-motion";
 import { Phone, User } from "lucide-react";
+import FAQ from "../../componentes/infoSocios/faq.jsx";
 
 import InfoCard from "../../componentes/consultas/card.jsx";
 
@@ -354,6 +355,8 @@ export default function InformacionSocios() {
             </motion.div>
           )}
         </div>
+
+            <FAQ />
 
         <div className="w-full bg-zinc-100 py-20 px-6 md:px-20">
           <div className="w-1/2 md:w-full h-2 bg-gradient-to-l from-[#c80000] to-black rounded-full mb-10 mx-auto"></div>

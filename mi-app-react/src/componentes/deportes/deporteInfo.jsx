@@ -9,6 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import GaleriaFotos from "./carrusel";
+import ImageModal from "../imageModal";
 
 export default function DeporteInfo({
   titulo,
@@ -40,6 +41,7 @@ export default function DeporteInfo({
         <div className="relative flex justify-center items-center">
           <div className="w-72 h-72 md:w-96 md:h-96 flex items-center justify-center">
             <motion.img
+         
               src={imagen}
               className="w-full h-full object-cover rounded-full"
               whileHover={{ scale: 1.05 }}
@@ -180,14 +182,16 @@ export default function DeporteInfo({
                       </div>
 
                       {/* IMAGENES CON MÁSCARA */}
-                      <div className="flex gap-4">
+                      <div className="flex flex-col md:flex-row gap-4">
                         {item.imgs.map((img, idx) => (
-                          <img
-                            key={idx}
-                            src={img}
-                            className="w-full h-50 object-cover rounded-lg shadow-sm"
-                            alt={`Detalle ${idx}`}
-                          />
+                          <ImageModal src={img} alt={idx} className="w-full h-50 object-cover rounded-lg shadow-sm"/>
+                          // <img
+                          //   key={idx}
+                          //   src={img}
+                          //   className="w-full h-50 object-cover rounded-lg shadow-sm"
+                          //   alt={`Detalle ${idx}`}
+                          //   onClick={ImageModal(img,idx)}
+                          // />
                         ))}
                       </div>
                     </div>
