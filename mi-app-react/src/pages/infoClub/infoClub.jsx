@@ -26,7 +26,7 @@ import { motion } from "framer-motion";
 import fotoFutbol1 from "../../assets/img/infoClub/futbol1.jpg";
 import fotoHockey1 from "../../assets/img/infoClub/hockey1.jpg";
 
-import fotoEscudo from "../../assets/img/home/CEOS.png";
+import fotoEscudo from "../../assets/img/CEOS.webp";
 import fotoLogo from "../../assets/img/LOGO.png";
 import GaleriaFotos from "../../componentes/deportes/carrusel"
 

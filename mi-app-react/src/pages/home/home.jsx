@@ -1,7 +1,7 @@
 import Header from "../../componentes/encabezado/header";
 import Footer from "../../componentes/footer/footer";
 
-import escudo from "../../assets/img/home/CEOS.png";
+import escudo from "../../assets/img/CEOS.webp";
 import Carrusel from "../../componentes/carrusel/carrusel.jsx"
 import fotoFutbol from "../../assets/img/deportes/futbol.jpg";
 import fotoHockey from "../../assets/img/deportes/hockey.jpg";
@@ -18,6 +18,10 @@ import {
 import { useEffect, useState } from "react";
 
 import Counter from "../../componentes/home/counter.jsx";
+
+import { lazy, Suspense } from "react";
+
+
 
 export default function Home(){
     const fadeUp = {
@@ -36,6 +40,7 @@ export default function Home(){
     navigate(direccion);
   };
 
+  const Carrusel = lazy(() => import("../../componentes/carrusel/carrusel.jsx"));
   return (
     // mt-16 compensa la altura del Header fijo (h-16).
     // El degradado va de arriba (from-[#c80000]) hacia abajo (to-[#8b0000]).
@@ -109,7 +114,9 @@ export default function Home(){
       </div>
       <section>
         <div>
-          <Carrusel></Carrusel>
+         <Suspense fallback={null}>
+  <Carrusel />
+</Suspense>
         </div>
       </section>
 
