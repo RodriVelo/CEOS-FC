@@ -223,7 +223,7 @@ export default function Deportes() {
           ubicacion="Predio Ceos - Junín de los Andes"
           data={dataFutbol}
           imagenesGaleria={imagenesFutbol}
-          competencias={["Lifue Sur","Torneo Local"]}
+          competencias={["Lifune Sur","Torneo Local"]}
           reverse
           openIndex={openIndex}
           toggle={toggle}
