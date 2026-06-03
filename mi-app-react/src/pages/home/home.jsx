@@ -272,6 +272,114 @@ export default function Home(){
           />
         </motion.div>
       </section>
+
+       <section className="bg-black py-20 md:py-28 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+ 
+        {/* COLUMNA IZQUIERDA: texto */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex flex-col items-start"
+        >
+          {/* Etiqueta */}
+          <div className="flex items-center gap-2 mb-5">
+            <span className="block w-8 h-[3px] bg-[#ffc800]" />
+            <span className="text-[#ffc800] text-xs font-bold uppercase tracking-widest">
+              Dónde encontrarnos
+            </span>
+          </div>
+ 
+          <h2 className="font-black text-4xl sm:text-5xl lg:text-6xl tracking-tighter text-white uppercase leading-[0.9] mb-6">
+            Nuestro<br />
+            <span className="text-[#ffc800]">predio</span>
+          </h2>
+ 
+          <p className="text-gray-400 text-base leading-relaxed mb-10 max-w-sm">
+            Estamos ubicados en Carilafquen Lanín, en el corazón de Junín de los Andes.
+            Un espacio pensado para el deporte, la comunidad y el crecimiento de cada socio.
+          </p>
+ 
+          {/* Datos de contacto */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start gap-3">
+              <span className="mt-1 w-8 h-8 rounded-full bg-[#ffc800]/15 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ffc800]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-white font-semibold text-sm">Dirección</p>
+                <p className="text-gray-400 text-sm">Carilafquen Lanín, Junín de los Andes</p>
+              </div>
+            </div>
+ 
+            <div className="flex items-start gap-3">
+              <span className="mt-1 w-8 h-8 rounded-full bg-[#ffc800]/15 flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ffc800]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-white font-semibold text-sm">Teléfono</p>
+                <p className="text-gray-400 text-sm">+54 9 2972 40-5717</p>
+              </div>
+            </div>
+          </div>
+ 
+          {/* CTA */}
+          <motion.a
+            href="https://www.google.com/maps?q=-39.970552,-71.0791061"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="mt-10 inline-flex items-center gap-2 bg-[#ffc800] text-gray-900 text-sm font-bold uppercase tracking-widest px-6 py-3 rounded-sm hover:bg-red-700 transition-colors"
+          >
+            Abrir en Google Maps
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </motion.a>
+        </motion.div>
+ 
+        {/* COLUMNA DERECHA: mapa */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {/* Acento decorativo */}
+          <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#ffc800] rounded-sm -z-10 hidden lg:block" />
+          <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#ffc800/20 rounded-sm -z-10 hidden lg:block" />
+ 
+          <div className="overflow-hidden rounded-sm shadow-2xl border border-white/10">
+            {/* Header del mapa */}
+            <div className="bg-[#1a1a1a] px-4 py-3 flex items-center gap-2 border-b border-white/10">
+              <div className="flex gap-1.5">
+       
+              </div>
+              <span className="text-gray-500 text-xs ml-2 font-mono">Club CEOS — Junín de los Andes</span>
+            </div>
+ 
+            <iframe
+              src="https://www.google.com/maps?q=-39.970552,-71.0791061&z=15&output=embed"
+              width="100%"
+              height="380"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              title="Mapa del predio Club CEOS"
+            />
+          </div>
+        </motion.div>
+ 
+      </div>
+    </section>
     </main>
   );
 }

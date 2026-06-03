@@ -135,67 +135,122 @@ export default function Deportes() {
     },
   ];
 
+ 
+const deportes = [
+  {
+    key: "hockey",
+    label: "Hockey",
+    desc: "Equipos, torneos y entrenamientos para todas las edades.",
+    Icon: Goal,
+    img: galeriaH2, // reemplazá con tu imagen si tenés: fotoHockey
+    accent: "#ffc800",
+    tag: "Pista · Césped",
+  },
+  {
+    key: "futbol",
+    label: "Fútbol",
+    desc: "Ligas, competencias y divisiones para cada categoría.",
+    Icon: Trophy,
+    img: galeriaF2, // reemplazá con tu imagen si tenés: fotoFutbol
+    accent: "#c80000",
+    tag: "11 · Reducido",
+  },
+];
+
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="deportes" className="bg-white">
-      <main className="min-h-[calc(100vh-64px)] w-full bg-gradient-to-b from-[#c80000] to-black text-white pt-25 pb-10 md:pb-10 md:pt-30">
-        {/* TITULO */}
+   // Sección principal
+<section id="deportes" className="bg-white">
+  <main className="min-h-[calc(100vh-64px)] w-full text-white pt-24 pb-16 overflow-hidden flex flex-col items-center"
+    style={{ background: "linear-gradient(170deg, #c80000 0%, #1a0000 55%, #000 100%)" }}>
 
-        <motion.div
+    {/* TÍTULO */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      animate="show"
+      className="text-center mb-14 px-4"
+    >
+      <h1 className="text-[clamp(40px,7vw,68px)] font-black uppercase tracking-tighter leading-[0.95] text-white">
+        Nuestros<br />deportes
+      </h1>
+      <p className="text-white/45 mt-3 text-[15px]">
+        Entrená, competí y formá parte del equipo
+      </p>
+    </motion.div>
+
+    {/* CARDS */}
+    <div className="flex flex-col md:flex md:flex-row gap-4 w-full px-4 justify-center">
+      {deportes.map((d, i) => (
+        <motion.button
+          key={d.key}
           variants={fadeUp}
           initial="hidden"
-          animate="show"
-          className="text-center mb-12 md:mb-16 px-4"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.15 }}
+          onClick={() => handleClick(d.key)}
+          aria-expanded={activo === d.key}
+          aria-controls={`info-${d.key}`}
+          className="group relative cursor-pointer overflow-hidden flex flex-row h-[200px] w-[550px] text-left focus-visible:outline-[3px] focus-visible:outline-[#ffc800] focus-visible:outline-offset-[3px] transition-transform duration-250 hover:-translate-y-[3px]"
+          style={{ borderRadius: "6px", boxShadow: activo === d.key ? "0 16px 40px rgba(0,0,0,0.45)" : "none" }}
         >
-          <h2 className="text-4xl md:text-5xl pb-2 font-extrabold text-white font-[Lato]">
-            NUESTROS DEPORTES
-          </h2>
-          <p>Entrená, competí y formá parte del equipo</p>
-        </motion.div>
-
-        {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 max-w-5xl mx-auto">
-          {/* HOCKEY */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => handleClick("hockey")}
-            className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center cursor-pointer"
+          {/* FOTO */}
+          <div
+            className="w-[44%] flex-shrink-0 relative overflow-hidden"
+            style={{ background: d.img ? `url(${d.img}) center/cover no-repeat` : "#2a3a2a" }}
           >
-            <Goal className="w-12 h-12 mb-3 text-[#ffc800]" />
-            <h2 className="text-xl font-semibold mb-2">Hockey</h2>
-            <p className="text-gray-500">
-              Información sobre hockey, equipos y torneos.
-            </p>
-          </motion.div>
+            <div className="absolute inset-0 bg-black/18 group-hover:bg-black/8 transition-all duration-300" />
+          </div>
 
-          {/* FUTBOL */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ delay: 0.2 }}
-            onClick={() => handleClick("futbol")}
-            className="bg-white text-black rounded-2xl shadow-md p-8 flex flex-col items-center text-center cursor-pointer"
-          >
-            <Trophy className="w-12 h-12 mb-3 text-[#ffc800]" />
-            <h2 className="text-xl font-semibold mb-2">Fútbol</h2>
-            <p className="text-gray-500">
-              Información sobre fútbol, ligas y competencias.
+          {/* Diagonal */}
+          <div
+            className="absolute top-0 z-10 h-full w-[52px]"
+            style={{
+              left: "calc(44% - 26px)",
+              background: "#f2f2f0",
+              clipPath: "polygon(42% 0%, 100% 0%, 58% 100%, 0% 100%)",
+            }}
+          />
+
+          {/* CUERPO */}
+          <div className="flex-1 flex flex-col justify-center px-5 md:px-6 relative" style={{ background: "#f2f2f0" }}>
+            <div className="absolute top-0 right-0 w-[3px] h-full" style={{ background: d.accent }} />
+
+            <span
+              className="text-[9px] font-black uppercase tracking-[0.16em] px-2 py-[3px] self-start mb-[9px]"
+              style={{ background: d.accent, color: "#fff", borderRadius: "2px" }}
+            >
+              {d.tag}
+            </span>
+
+            <h2 className="text-[clamp(22px,3vw,28px)] font-black uppercase tracking-tighter leading-none mb-[6px]" style={{ color: "#111" }}>
+              {d.label}
+            </h2>
+
+            <p className="text-[11px] leading-relaxed mb-[14px] max-w-[200px]" style={{ color: "#666" }}>
+              {d.desc}
             </p>
-          </motion.div>
-        </div>
-      </main>
+
+            <div
+              className="inline-flex items-center gap-[5px] text-[10px] font-black uppercase tracking-[0.12em] border-b-[1.5px] pb-[2px] w-fit transition-all duration-250 group-hover:gap-[8px]"
+              style={{ color: d.accent, borderColor: d.accent }}
+            >
+              Ver más
+              <svg className="w-[10px] h-[10px] transition-transform duration-250 group-hover:translate-x-[3px]"
+                fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </motion.button>
+      ))}
+    </div>
+ 
+    </main>
       {activo === "hockey" && (
          <div ref={infoRef}>
         <DeporteInfo
