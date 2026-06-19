@@ -129,7 +129,7 @@ export default function InfoClub() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               {/* SIDEBAR */}
-              <aside className="lg:col-span-4 order-1 lg:order-1">
+              <aside className="lg:col-span-4 self-start">
                 <motion.div
                   variants={fadeUp}
                   initial="hidden"
@@ -260,137 +260,92 @@ export default function InfoClub() {
                 </motion.div>
 
                 {/* Disciplinas */}
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {/* Encabezado */}
-                  <div className="flex items-center gap-4 mb-10">
-                    <div className="flex flex-col gap-1">
-                      <div className="w-8 h-1 bg-[#c80000] rounded-full" />
-                      <div className="w-5 h-1 bg-[#ffc800] rounded-full" />
-                    </div>
-                    <h2
-                      className="text-2xl md:text-3xl font-extrabold uppercase tracking-wide text-gray-900"
-                      style={{ fontFamily: "Lato, sans-serif" }}
-                    >
-                      Disciplinas Actuales
-                    </h2>
-                  </div>
+               <motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+>
+  <div className="flex items-center gap-3 mb-8">
+    <div className="w-2 h-10 bg-[#c80000]" />
+    <h2 className="text-2xl md:text-3xl font-extrabold uppercase text-gray-900"
+        style={{ fontFamily: "Lato, sans-serif" }}>
+      Disciplinas Actuales
+    </h2>
+  </div>
 
-                  {/* Tarjetas */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {[
-                      {
-                        title: "Fútbol",
-                        accent: "#c80000",
-                        accentLight: "#fdf0f0",
-                        list: [
-                          "9na División",
-                          "8va División",
-                          "5ta División",
-                          "Primera División",
-                        ],
-                        emoji: "⚽",
-                      },
-                      {
-                        title: "Hockey",
-                        accent: "#ffc800",
-                        accentLight: "#fffbea",
-                        list: [
-                          "Sub 12",
-                          "Sub 14",
-                          "Sub 16",
-                          "Sub 18",
-                          "Primera División",
-                        ],
-                        emoji: "🏑",
-                      },
-                    ].map((disc, i) => (
-                      <div
-                        key={i}
-                        className="relative rounded-2xl bg-white border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                      >
-                        {/* Barra lateral de color */}
-                        <div
-                          className="absolute left-0 top-0 bottom-0 w-1.5"
-                          style={{ backgroundColor: disc.accent }}
-                        />
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {[
+      {
+        title: "Fútbol",
+        accent: "#c80000",
+        accentLight: "#fdf0f0",
+        accentText: "#a00000",
+        list: [
+          { name: "9na División", badge: "Infantil" },
+          { name: "8va División", badge: "Infantil" },
+          { name: "5ta División", badge: "Juvenil" },
+          { name: "Primera División", badge: "Mayor" },
+        ],
+      },
+      {
+        title: "Hockey",
+        accent: "#e6a800",
+        accentLight: "#fffbea",
+        accentText: "#92700a",
+        list: [
+          { name: "Sub 12", badge: "Infantil" },
+          { name: "Sub 14", badge: "Juvenil" },
+          { name: "Sub 16", badge: "Juvenil" },
+          { name: "Sub 18", badge: "Juvenil" },
+          { name: "Primera División", badge: "Mayor" },
+        ],
+      },
+    ].map((disc, i) => (
+      <div
+        key={i}
+        className="bg-white border border-black/[0.07] rounded-2xl overflow-hidden"
+      >
+        {/* Header */}
+        <div className="px-7 pt-7 pb-5 border-b border-black/[0.05]">
+          <div className="flex items-center gap-[10px] mb-1">
+            <div
+              className="w-[10px] h-[10px] rounded-full flex-shrink-0"
+              style={{ background: disc.accent }}
+            />
+            <span className="text-[22px] font-semibold text-[#111] tracking-tight">
+              {disc.title}
+            </span>
+          </div>
+          <p className="text-[12px] text-gray-400 pl-5">
+            {disc.list.length} categorías activas
+          </p>
+        </div>
 
-                        <div className="pl-7 pr-6 pt-6 pb-7">
-                          {/* Header de la tarjeta */}
-                          <div className="flex items-start justify-between mb-6">
-                            <div>
-                              <h4
-                                className="text-xl md:text-2xl font-black text-gray-900 leading-tight"
-                                style={{ fontFamily: "Lato, sans-serif" }}
-                              >
-                                {disc.title}
-                              </h4>
-                              <div
-                                className="h-0.5 w-10 mt-2 rounded-full"
-                                style={{ backgroundColor: disc.accent }}
-                              />
-                            </div>
-
-                            {/* Badge del emoji */}
-                            <div
-                              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0"
-                              style={{ backgroundColor: disc.accentLight }}
-                            >
-                              {disc.emoji}
-                            </div>
-                          </div>
-
-                          {/* Lista de divisiones */}
-                          <ul
-                            className="space-y-2.5"
-                            style={{ fontFamily: "Inter, sans-serif" }}
-                          >
-                            {disc.list.map((item, j) => (
-                              <li key={j} className="flex items-center gap-3">
-                                {/* Punto de acento */}
-                                <span
-                                  className="w-2 h-2 rounded-full shrink-0"
-                                  style={{ backgroundColor: disc.accent }}
-                                />
-                                <span className="text-sm md:text-base text-slate-600 font-medium">
-                                  {item}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-
-                          {/* Footer con cantidad */}
-                          <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span
-                              className="text-xs font-semibold uppercase tracking-widest"
-                              style={{
-                                color: disc.accent,
-                                fontFamily: "Inter, sans-serif",
-                              }}
-                            >
-                              {disc.list.length} categorías
-                            </span>
-                            <div
-                              className="text-xs font-bold px-3 py-1 rounded-full"
-                              style={{
-                                backgroundColor: disc.accentLight,
-                                color: disc.accent,
-                                fontFamily: "Inter, sans-serif",
-                              }}
-                            >
-                              Activo
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+        {/* Lista */}
+        <div className="px-7 py-2">
+          {disc.list.map((cat, j) => (
+            <div
+              key={j}
+              className="flex items-center justify-between py-[10px]
+                         border-b border-black/[0.05] last:border-0
+                         text-[13px] text-[#444]"
+            >
+              <span>{cat.name}</span>
+              <span
+                className="text-[10px] font-semibold px-2 py-[2px] rounded-full"
+                style={{ background: disc.accentLight, color: disc.accentText }}
+              >
+                {cat.badge}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</motion.div>
               </div>
             </div>
           </div>

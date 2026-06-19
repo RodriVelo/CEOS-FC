@@ -183,72 +183,59 @@ const deportes = [
     </motion.div>
 
     {/* CARDS */}
-    <div className="flex flex-col md:flex md:flex-row gap-4 w-full px-4 justify-center">
-      {deportes.map((d, i) => (
-        <motion.button
-          key={d.key}
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          transition={{ delay: i * 0.15 }}
-          onClick={() => handleClick(d.key)}
-          aria-expanded={activo === d.key}
-          aria-controls={`info-${d.key}`}
-          className="group relative cursor-pointer overflow-hidden flex flex-row h-[200px] w-[550px] text-left focus-visible:outline-[3px] focus-visible:outline-[#ffc800] focus-visible:outline-offset-[3px] transition-transform duration-250 hover:-translate-y-[3px]"
-          style={{ borderRadius: "6px", boxShadow: activo === d.key ? "0 16px 40px rgba(0,0,0,0.45)" : "none" }}
+<div className="flex flex-col sm:flex-row gap-4 w-full max-w-4xl mx-auto px-4">
+  {deportes.map((d, i) => (
+    <motion.button
+      key={d.key}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.12 }}
+      onClick={() => handleClick(d.key)}
+      aria-expanded={activo === d.key}
+      aria-controls={`info-${d.key}`}
+      className="group relative cursor-pointer text-left
+               w-full sm:flex-1 flex flex-col overflow-hidden
+               border border-black/[0.06] bg-white
+               transition-all duration-200 hover:-translate-y-[3px]
+               focus-visible:outline-2 focus-visible:outline-offset-2
+               focus-visible:outline-[#ffc800]"
+      style={{ borderRadius: "14px" }}
+    >
+      {/* FOTO */}
+      <div
+        className="relative h-[160px] w-full flex-shrink-0 overflow-hidden"
+        style={{
+          background: d.img
+            ? `url(${d.img}) center/cover no-repeat`
+            : "#ddd",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20
+                       group-hover:bg-black/10 transition-all duration-300" />
+      </div>
+
+      {/* CUERPO */}
+      <div className="flex flex-col flex-1 px-5 pt-3 pb-4 bg-white">
+        <span
+          className="text-[10px] font-medium px-2 py-[3px] self-start rounded-full mb-2"
+          style={{ background: d.accentLight, color: d.accentDark }}
         >
-          {/* FOTO */}
-          <div
-            className="w-[44%] flex-shrink-0 relative overflow-hidden"
-            style={{ background: d.img ? `url(${d.img}) center/cover no-repeat` : "#2a3a2a" }}
-          >
-            <div className="absolute inset-0 bg-black/18 group-hover:bg-black/8 transition-all duration-300" />
-          </div>
+          {d.tag}
+        </span>
 
-          {/* Diagonal */}
-          <div
-            className="absolute top-0 z-10 h-full w-[52px]"
-            style={{
-              left: "calc(44% - 26px)",
-              background: "#f2f2f0",
-              clipPath: "polygon(42% 0%, 100% 0%, 58% 100%, 0% 100%)",
-            }}
-          />
+        <h2 className="text-[15px] font-medium text-[#111] mb-1">
+          {d.label}
+        </h2>
 
-          {/* CUERPO */}
-          <div className="flex-1 flex flex-col justify-center px-5 md:px-6 relative" style={{ background: "#f2f2f0" }}>
-            <div className="absolute top-0 right-0 w-[3px] h-full" style={{ background: d.accent }} />
-
-            <span
-              className="text-[9px] font-black uppercase tracking-[0.16em] px-2 py-[3px] self-start mb-[9px]"
-              style={{ background: d.accent, color: "#fff", borderRadius: "2px" }}
-            >
-              {d.tag}
-            </span>
-
-            <h2 className="text-[clamp(22px,3vw,28px)] font-black uppercase tracking-tighter leading-none mb-[6px]" style={{ color: "#111" }}>
-              {d.label}
-            </h2>
-
-            <p className="text-[11px] leading-relaxed mb-[14px] max-w-[200px]" style={{ color: "#666" }}>
-              {d.desc}
-            </p>
-
-            <div
-              className="inline-flex items-center gap-[5px] text-[10px] font-black uppercase tracking-[0.12em] border-b-[1.5px] pb-[2px] w-fit transition-all duration-250 group-hover:gap-[8px]"
-              style={{ color: d.accent, borderColor: d.accent }}
-            >
-              Ver más
-              <svg className="w-[10px] h-[10px] transition-transform duration-250 group-hover:translate-x-[3px]"
-                fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
-        </motion.button>
-      ))}
-    </div>
+        <p className="text-[12px] leading-relaxed text-[#888]">
+          {d.desc}
+        </p>
+      </div>
+    </motion.button>
+  ))}
+</div>
  
     </main>
       {activo === "hockey" && (
