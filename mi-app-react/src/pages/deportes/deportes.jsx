@@ -141,19 +141,19 @@ const deportes = [
     key: "hockey",
     label: "Hockey",
     desc: "Equipos, torneos y entrenamientos para todas las edades.",
-    Icon: Goal,
-    img: galeriaH2, // reemplazá con tu imagen si tenés: fotoHockey
+    img: galeriaH2,
     accent: "#ffc800",
-    tag: "Pista · Césped",
+    accentText: "#000",
+    tag: "Césped",
   },
   {
     key: "futbol",
     label: "Fútbol",
     desc: "Ligas, competencias y divisiones para cada categoría.",
-    Icon: Trophy,
-    img: galeriaF2, // reemplazá con tu imagen si tenés: fotoFutbol
+    img: galeriaF2,
     accent: "#c80000",
-    tag: "11 · Reducido",
+    accentText: "#fff",
+    tag: "Once",
   },
 ];
 
@@ -193,50 +193,62 @@ const deportes = [
       viewport={{ once: true }}
       transition={{ delay: i * 0.12 }}
       onClick={() => handleClick(d.key)}
-      aria-expanded={activo === d.key}
-      aria-controls={`info-${d.key}`}
-      className="group relative cursor-pointer text-left
-               w-full sm:flex-1 flex flex-col overflow-hidden
-               border border-black/[0.06] bg-white
-               transition-all duration-200 hover:-translate-y-[3px]
-               focus-visible:outline-2 focus-visible:outline-offset-2
-               focus-visible:outline-[#ffc800]"
-      style={{ borderRadius: "14px" }}
+      className="group relative cursor-pointer text-left w-full sm:flex-1
+                 overflow-hidden bg-red transition-all duration-200
+                 hover:-translate-y-1 focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-[#ffc800]"
+      style={{ borderRadius: "16px" }}
     >
-      {/* FOTO */}
-      <div
-        className="relative h-[160px] w-full flex-shrink-0 overflow-hidden"
-        style={{
-          background: d.img
-            ? `url(${d.img}) center/cover no-repeat`
-            : "#ddd",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/20
-                       group-hover:bg-black/10 transition-all duration-300" />
+      {/* IMAGEN */}
+      <div className="relative overflow-hidden" style={{ height: "200px" }}>
+        <img
+          src={d.img}
+          alt={d.label}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, transparent 40%, #ffffff 100%)" }}
+        />
       </div>
 
       {/* CUERPO */}
-      <div className="flex flex-col flex-1 px-5 pt-3 pb-4 bg-white">
+      <div className="px-5 pt-4 pb-5 bg-white">
         <span
-          className="text-[10px] font-medium px-2 py-[3px] self-start rounded-full mb-2"
-          style={{ background: d.accentLight, color: d.accentDark }}
+          className="inline-block text-[11px] font-medium uppercase tracking-wider
+                     px-3 py-1 rounded-full mb-3"
+          style={{ background: d.accent, color: d.accentText }}
         >
           {d.tag}
         </span>
 
-        <h2 className="text-[15px] font-medium text-[#111] mb-1">
-          {d.label}
+        <h2
+          className="uppercase text-gray-900 leading-none mb-2"
+          style={{
+            fontFamily: "Georgia, serif",
+            fontSize: "clamp(36px, 8vw, 52px)",
+            fontWeight: 700,
+            letterSpacing: "-1px",
+          }}
+        >
+          {d.label.toUpperCase()}
         </h2>
 
-        <p className="text-[12px] leading-relaxed text-[#888]">
+        <p className="text-gray-900 text-xs leading-relaxed mb-4 max-w-[200px]">
           {d.desc}
         </p>
+
+        <div className="flex items-center gap-2 text-gray-900 text-[13px]
+                        font-medium uppercase tracking-wide">
+          VER MAS
+          <div className="w-8 h-8 rounded-full flex items-center justify-center"
+            style={{ border: "1.5px solid rgba(255,255,255,0.35)" }}>
+            →
+          </div>
+        </div>
       </div>
     </motion.button>
   ))}
 </div>
- 
     </main>
       {activo === "hockey" && (
          <div ref={infoRef}>
